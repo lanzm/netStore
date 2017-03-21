@@ -1,0 +1,72 @@
+/* Border styles */
+
+#table-2 thead, #table-2 tr {
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: rgb(211, 202, 221);
+}
+#table-2 {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: rgb(211, 202, 221);
+}
+
+
+#table-2 td, #table-2 th {
+padding: 5px 10px;
+font-size: 12px;
+font-family: Verdana;
+color: rgb(95, 74, 121);
+}
+
+#table-2 tr:nth-child(even) {
+background: rgb(223, 216, 232)
+}
+#table-2 tr:nth-child(odd) {
+background: #FFF
+}
+
+.del {
+background: #E27575;
+border: none;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+box-shadow: 1px 1px 5px #B6B6B6;
+border-radius: 3px;
+text-shadow: 1px 1px 1px #9E3F3F;
+cursor: pointer;
+}
+.del:hover {
+background: #CF7A7A
+}
+
+.update {
+background: #E27575;
+border: none;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+box-shadow: 1px 1px 5px #B6B6B6;
+border-radius: 3px;
+text-shadow: 1px 1px 1px #9E3F3F;
+cursor: pointer;
+}
+.update:hover {
+background: #CF7A7A
+}
+
+ .add{
+     height: 37px;
+     line-height: 37px;
+     padding: 0 11px;
+     background: #E27575;
+     background-size: 5000px 37px
+     border: 1px #26bbdb solid;
+     border-radius: 3px;
+     /*color: #fff;*/
+     display: inline-block;
+     text-decoration: none;
+     text-shadow: 1px 1px 1px #9E3F3F;
+	 cursor: pointer;
+     font-size: 12px;
+     outline: none;
+        }
