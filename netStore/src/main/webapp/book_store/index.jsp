@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Book Store</title>
+<title>我的网上书城</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 </head>
 <body>
@@ -18,8 +18,8 @@
         <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="category.html">书城</a></li>
+          <!--    <li><a href="about.html">关于我们</a></li> -->
+            <li><a href="category.action">书城</a></li>
             <li><a href="specials.html">特价书</a></li>
             <li><a href="myaccount.html">我的账号</a></li>
             <li><a href="register.html">注册</a></li>
@@ -81,7 +81,7 @@
            <div class="new_products">
            
                     <div class="new_prod_box">
-                        <a href="details.html">${newbook1.bookname}</a>
+                        <a class="li" href="details.html" title="${newbook1.bookname}">${newbook1.bookname}</a>
                         <div class="new_prod_bg">
                         <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
                         <a href="details.html"><img src="/image/${newbook1.filename}" alt="" title="" class="thumb" border="0" /></a>
@@ -89,21 +89,21 @@
                     </div>
                     
                     <div class="new_prod_box">
-                        <a href="details.html">${newbook2.bookname}</a>
+                        <a class="li" href="details.html" title="${newbook2.bookname}">${newbook2.bookname}</a>
                         <div class="new_prod_bg">
                         <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
                         <a href="details.html"><img src="/image/${newbook2.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>                    
-                   <!-- 
+                    
                     <div class="new_prod_box">
-                        <a href="details.html">${newbook3.bookname}</a>
+                        <a class="li" href="details.html" title="${newbook3.bookname}">${newbook3.bookname}</a>
                         <div class="new_prod_bg">
                         <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
                         <a href="details.html"><img src="/image/${newbook3.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>          
-            	  --> 
+            	 
             </div> 
           
             
@@ -141,35 +141,36 @@
              <div class="about">
              <p>
              <img src="book_store/images/about.gif" alt="" title="" class="right" />
-            	书是人类进步的阶梯 让我们在无穷的书店里探索无穷的真理好书不贵！谁说便宜没好书！！
+            	书是人类进步的阶梯 让我们在无穷的书店里探索无穷的真理好书不贵！
+            	<br />谁说便宜没好书！！
              </p>
              
              </div>
              
              <div class="right_box">
              
-             	<div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" title="" /></span>Promotions</div> 
+             	<div class="title"><span class="title_icon"><img src="book_store/images/bullet4.gif" alt="" title="" /></span>促销</div> 
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${bookPromotions1.bookname}</a>
                         <div class="new_prod_bg">
                         <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <a href="details.html"><img src="/image/${bookPromotions1.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>
                     
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${bookPromotions2.bookname}</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="/image/${bookPromotions2.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>                    
                     
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${bookPromotions3.bookname}</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="/image/${bookPromotions3.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>              
              
@@ -177,23 +178,16 @@
              
              <div class="right_box">
              
-             	<div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" title="" /></span>Categories</div> 
+             	<div class="title"><span class="title_icon"><img src="book_store/images/bullet5.gif" alt="" title="" /></span>分类</div> 
                 
                 <ul class="list">
-                <li><a href="#">accesories</a></li>
-                <li><a href="#">books gifts</a></li>
-                <li><a href="#">specials</a></li>
-                <li><a href="#">hollidays gifts</a></li>
-                <li><a href="#">accesories</a></li>
-                <li><a href="#">books gifts</a></li>
-                <li><a href="#">specials</a></li>
-                <li><a href="#">hollidays gifts</a></li>
-                <li><a href="#">accesories</a></li>
-                <li><a href="#">books gifts</a></li>
-                <li><a href="#">specials</a></li>                                              
+                	<c:forEach items="${classifies}" var="c">
+                		<li><a href="#">${c.classifyname}</a></li>
+                	</c:forEach>
                 </ul>
-                
-             	<div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" title="" /></span>Partners</div> 
+             
+             <!--  
+             <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" title="" /></span>Partners</div> 
                 
                 <ul class="list">
                 <li><a href="#">accesories</a></li>
@@ -207,8 +201,8 @@
                 <li><a href="#">accesories</a></li>                              
                 </ul>      
              
+              -->  
              </div>         
-             
         
         </div><!--end of right content-->
         
@@ -220,10 +214,10 @@
        
               
        <div class="footer">
-       	<div class="left_footer"><img src="images/footer_logo.gif" alt="" title="" /><br /> <a href="http://www.cssmoban.com/" title="free templates">cssmoban</a></div>
+       	<div class="left_footer"><img src="book_store/images/footer_logo.gif" alt="" title="" /><br /></div>
         <div class="right_footer">
-        <a href="#">home</a>
-        <a href="#">about us</a>
+        <a href="welcome.action">首页</a>
+        <a href="#">关于我们</a>
         <a href="#">services</a>
         <a href="#">privacy policy</a>
         <a href="#">contact us</a>

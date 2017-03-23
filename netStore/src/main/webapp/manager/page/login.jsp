@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -42,7 +43,9 @@
 					<input type="password" id="password" name="password" lay-verify="password" autocomplete="off" placeholder="这里输入密码" class="layui-input">
 				</div>
 				<div class="layui-form-item">
-					
+					<div class="pull-left"> 
+						<span><font color="red">${msg}</font></span>
+					</div>
 					<div class="pull-right">
 						<button id="submit" class="layui-btn layui-btn-primary" lay-submit="" lay-filter="login">
 							<i class="layui-icon"></i> 登录

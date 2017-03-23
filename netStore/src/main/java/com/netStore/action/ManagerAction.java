@@ -20,7 +20,14 @@ public class ManagerAction {
 	@Autowired
 	public ManagerService ManagerService;
 
-	// 登陆
+	/**
+	 * 登陆
+	 * @param model 传登陆信息到页面
+	 * @param httpSession 把用户名存到session中
+	 * @param managername 用户名
+	 * @param password 密码
+	 * @return
+	 */
 	@RequestMapping("/managerlogin")
 	public String managerlogin(Model model,HttpSession httpSession,String managername,String password){
 		
@@ -31,9 +38,14 @@ public class ManagerAction {
 				return "index";
 			}
 		}
+		model.addAttribute("msg", "用户名或密码错误");
 		return "login";
 	}
-	// 退出
+	/**
+	 *  退出和切换用户
+	 * @param httpSession 把session删掉
+	 * @return
+	 */
 	@RequestMapping("/managerlogout")
 	public String managerlogout(HttpSession httpSession){
 		httpSession.invalidate();

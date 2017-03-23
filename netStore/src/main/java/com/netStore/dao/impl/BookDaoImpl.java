@@ -47,6 +47,12 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao<Book>{
 		//List<Book> books = (List<Book>) this.getHibernateTemplate().find(" from Book where bookname like '%" + vague +"%' ");
 		return books;
 	}
+
+	@Override
+	public List<Book> getPromotions() {
+		List<Book> books = (List<Book>) this.getHibernateTemplate().find(" from Book where promotions = true ");
+		return books;
+	}
 	
 	
 

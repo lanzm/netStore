@@ -9,6 +9,7 @@
 				updatebook:{
 					update_button:'',
 					url:'',
+					url_promotions:'',
 				},
 				addbook:{
 					url:'',
@@ -37,7 +38,34 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				/**
+				 *  修改 是否促销 事件
+				 */
+				$("#promotions").live('change',function(){
+					// 设置标识符
+					var flag = false;
+					// 选择的是什么
+					if($(this).val() == "是"){
+						flag = true;
+					}
+					else if($(this).val() == "否"){
+						flag = false;
+					}else{
+						flag = null;
+					}
+					// 取 该行的id值
+					var id = $(this).parent().parent().children().eq(0).children().eq(1).attr("value");
+					// 往后台送数据
+					$.post($.fn.GridPanel.defaultConfig.option.updatebook.url_promotions,{
+						flag:flag,
+						bookid:id
+					},function(){
+						
+					});
+				});
+				
+				/**
 				 * 搜索点击事件
+				 * 搜索字段为空时 ， 刷新本页
 				 */
 				$("#seach").click(function(){
 					// 当 输入框中值为空时
@@ -46,11 +74,6 @@
 						$("#seach").attr("href","listBook.action");
 						return true;
 					}else{
-						//否则 修改路径
-						//设置字符集
-						//var vague = encodeURI($("#vague").val(),"utf-8");
-						//$("#seach").attr("href","vagueBook/" + $("#vague").val() + ".action");
-						//alert($("#seach").attr("href"));
 						return true;
 					}
 				});
@@ -86,6 +109,8 @@
 						if($(this).is(":checked")){
 							// 删除
 							$.post("removeBook/"+ $(this).parent().children().eq(1).attr("value") +".action",null,function(){
+								// 刷新页面
+								history.go(0);
 							});
 						}
 					});

@@ -34,7 +34,7 @@
 					<a href=""><%=session.getAttribute("managername")%><i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
 						<li><a href="">个人信息</a></li>
-						<li><a href="">切换账户</a></li>
+						<li><a href="managerlogout.action">切换账户</a></li>
 						<li><a href="managerlogout.action">退出</a></li>
 					</ul>
 				</li>

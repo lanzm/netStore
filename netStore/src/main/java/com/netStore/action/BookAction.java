@@ -13,6 +13,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -108,10 +109,28 @@ public class BookAction {
 	@RequestMapping("/removeBook/{bid}")
 	public String removeBook(@PathVariable long bid){
 		
-		System.out.println(bid);
-		//BookService.remove_Book(bid);
+		BookService.remove_Book(bid);
 		
-		return "book";
+		return "redirect:/manager/listBook.action";
+		
+	}
+	
+	/**
+	 * 更新 是否促销
+	 * @param flag 网页传来的标识符
+	 * @param bookid 网页传来的书籍id
+	 * @return
+	 */
+	@RequestMapping("/updateBookPmt")
+	public String updateBookPmt(boolean flag,long bookid){
+		// 用id查出书籍
+		Book book = BookService.get_BookById(bookid);
+		// 设置 标识符
+		book.setPromotions(flag);
+		// 更新
+		BookService.update_Book(book);
+		
+		return "redirect:/manager/listBook.action";
 		
 	}
 	
@@ -129,6 +148,15 @@ public class BookAction {
 		model.addAttribute("book", book);
 		model.addAttribute("classifys", lists);
 		
+		// 删除旧图片操作
+		String realPath = "G:/For Jee/eclipse/Program/netStore/src/main/webapp/book_store/images/myimages";
+		// 图片路径
+		File delold = new File(realPath + "/" + book.getFilename());
+		// 如果图片存在
+		if(delold.exists()){
+			delold.delete();
+		}
+		
 		return "updatebook";
 		
 	}
@@ -138,13 +166,45 @@ public class BookAction {
 	 * @param classifyn 特地接收分类数据
 	 * @param book 对应的书籍数据
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping("/updateBook")
-	public String updateBook(String classifyn,Book book){
-		System.out.println(classifyn);
-		System.out.println(book.getBookname());
-		System.out.println(book.getDescription());
+	public String updateBook(String classifyn,Book book,HttpServletRequest request) throws Exception{
+		
+		MultipartHttpServletRequest servletRequest = (MultipartHttpServletRequest) request;
+		// 得到 图片对象
+		MultipartFile image = servletRequest.getFile("image");
+		// 图片存储路径
+		String realPath = "G:/For Jee/eclipse/Program/netStore/src/main/webapp/book_store/images/myimages";
+		File savePath = new File(realPath);
+		// 如果存储路径不存在
+		if(!savePath.exists()){
+			savePath.mkdirs();
+		}
+	
+		// 图片名称
+		String filename = image.getOriginalFilename();
+		Random random = new Random();
+		String photo = random.genGUID();
+		if(filename != null){
+			filename = photo + "." + FilenameUtils.getExtension(filename);
+		}
+		// 图片 数据流
+		InputStream ins = image.getInputStream();
+		// 存储 图片
+		saveimage(ins,filename,savePath.toString());
+		// 存入 文件名
+		book.setFilename(filename);
+		// 存入 分类信息
+		Classify classify = ClassifyService.get_ClassifyByName(classifyn);
+		book.setClassify(classify);
+		// 存入 添加书籍时间
+		book.setAddtime(new Date());
+		// 用此更新方法 会出现引用对象不同的问题，待解决
 		//BookService.update_Book(book);
+		BookService.remove_Book(book.getBid());
+		BookService.save_Book(book);
+		
 		return "redirect:/manager/listBook.action";
 		
 	}
@@ -197,6 +257,8 @@ public class BookAction {
 		//获取 从选择中的分类
 		Classify classify = ClassifyService.get_ClassifyByName(classifyn);
 		book.setClassify(classify);
+		// 默认不做促销
+		book.setPromotions(false);
 		// 把现在的时间 存入数据库
 		book.setAddtime(new Date());
 		// 将book存入数据库

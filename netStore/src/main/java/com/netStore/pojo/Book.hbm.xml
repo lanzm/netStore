@@ -28,6 +28,7 @@
 		<property name="filename" length="50" type="java.lang.String"></property>
 		<property name="description" length="500" type="java.lang.String"></property>
 		<property name="addtime" type="date"></property>
+		<property name="promotions" type="boolean"></property>
 		<many-to-one name="classify" class="com.netStore.pojo.Classify" column="cid" lazy="false"></many-to-one>
 	</class>
 </hibernate-mapping>

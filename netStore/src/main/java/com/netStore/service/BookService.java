@@ -24,8 +24,13 @@ public interface BookService {
 	/**
 	 * 模糊查询
 	 * @param vague 关键字
-	 * @return 返回book数组
+	 * @return 返回书籍集合
 	 */
 	List<Book> get_BookByVague(String vague);
+	/**
+	 * 是否促销
+	 * @return 返回书籍集合
+	 */
+	List<Book> get_BookPromotions();
 
 }

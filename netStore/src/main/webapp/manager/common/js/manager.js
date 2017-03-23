@@ -7,6 +7,7 @@ $().ready(function(){
 			updatebook:{
 				update_button:'update',
 				url:'updateBook.action',
+				url_promotions:'updateBookPmt.action'
 			},
 			addbook:{
 				url:'addBook_bf.action',

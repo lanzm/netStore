@@ -16,6 +16,7 @@
 		<br>
 		<br>
 		<form action="../updateBook.action" method="post" id="addbook" class="basic-grey" enctype="multipart/form-data">
+				<input id="bid" name="bid" type="hidden" value="${book.bid}">
 			<label>
 				<span>图书名称*：</span>
 				<input id="bookname" name="bookname" type="text" value="${book.bookname}"/>

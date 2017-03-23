@@ -74,6 +74,12 @@ public class BookServiceImpl implements BookService{
 		
 	}
 
+	@Override
+	public List<Book> get_BookPromotions() {
+		
+		return bookDao.getPromotions();
+	}
+
 	
 
 

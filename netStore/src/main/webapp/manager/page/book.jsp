@@ -29,6 +29,8 @@
 				<th>书籍名称</th>
 				<th>书籍作者</th>
 				<th>书籍价格</th>
+				<th>书籍添加时间</th>
+				<th>书籍是否做促销</th>
 				<th>书籍简介</th>
 			</tr>
 			
@@ -44,6 +46,13 @@
 					<td>${list.bookname}</td>
 					<td>${list.author}</td>
 					<td>${list.price}</td>
+					<td>${list.addtime}</td>
+					<td>
+						<select id="promotions">
+							<option <c:if test="${list.promotions == true}">selected="selected"</c:if> >是</option>
+							<option <c:if test="${list.promotions == false}">selected="selected"</c:if> >否</option>
+						</select>
+					</td>
 					<td id="${status.index + 1}" width="400">${list.description}</td>
 				</tr>
 			</c:forEach>

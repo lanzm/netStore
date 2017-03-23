@@ -5,13 +5,14 @@ import java.util.Date;
 
 public class Book implements Serializable{
 	
-	private long bid;
-	private String bookname;
-	private String author;
-	private float price;
+	private long bid;  // 书籍主键
+	private String bookname; // 书籍名字
+	private String author; // 作者
+	private float price; // 价格
 	private String filename;//更改后的唯一文件名
-	private String description;
-	private Date addtime;
+	private String description; // 书籍描述
+	private Date addtime;  // 书籍加入时间
+	private boolean promotions; // 书籍是否做促销
 	private Classify classify;
 	
 	public Classify getClassify() {
@@ -62,6 +63,12 @@ public class Book implements Serializable{
 	}
 	public void setAddtime(Date addtime) {
 		this.addtime = addtime;
+	}
+	public boolean isPromotions() {
+		return promotions;
+	}
+	public void setPromotions(boolean promotions) {
+		this.promotions = promotions;
 	}
 	
 	

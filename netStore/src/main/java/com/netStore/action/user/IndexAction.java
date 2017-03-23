@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.netStore.pojo.Book;
+import com.netStore.pojo.Classify;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
 
@@ -82,6 +83,18 @@ public class IndexAction {
 		// 产生的新书随机送到网页
 		model.addAttribute("newbook1", books.get(newbookList.get(0)));
 		model.addAttribute("newbook2", books.get(newbookList.get(1)));
+		model.addAttribute("newbook3", books.get(newbookList.get(2)));
+		// 得到 做促销的书籍
+		List<Book> booksPromotions = BookService.get_BookPromotions();
+		// 产生三个随机数
+		List<Integer> booksp = random(booksPromotions);
+		// 产生的促销书籍放到网页
+		model.addAttribute("bookPromotions1", books.get(booksp.get(0)));
+		model.addAttribute("bookPromotions2", books.get(booksp.get(1)));
+		model.addAttribute("bookPromotions3", books.get(booksp.get(2)));
+		// 分类传到网页
+		List<Classify> classifies = ClassifyService.list_Classify();
+		model.addAttribute("classifies", classifies);
 		
 		return "../../book_store/index";
 		
@@ -103,10 +116,12 @@ public class IndexAction {
 		int a = random.nextInt(max)%(max+1);
 		boolean flag = true;
 		int b = 0;
+		int c = 0;
 		// 产生三个不同的 随机数
 		while(flag){
 			b = random.nextInt(max)%(max+1);
-			if(a == b){
+			c = random.nextInt(max)%(max+1);
+			if(a == b || a == c || b == c){
 				flag = true;
 			}else{
 				flag = false;
@@ -115,7 +130,7 @@ public class IndexAction {
 		
 		randoms.add(a);
 		randoms.add(b);
-		
+		randoms.add(c);
 		return randoms;
 	}
 	

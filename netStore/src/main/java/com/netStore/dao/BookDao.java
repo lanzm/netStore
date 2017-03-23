@@ -23,5 +23,10 @@ public interface BookDao<T> extends BaseDao<T>{
 	 * @return 返回book数组
 	 */
 	public List<T> getBookVague(String vague);
+	/**
+	 * 书籍是否做促销
+	 * @return 返回促销书籍
+	 */
+	public List<T> getPromotions();
 
 }
