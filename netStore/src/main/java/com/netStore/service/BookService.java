@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.netStore.pojo.Book;
 import com.netStore.pojo.Manager;
+import com.netStore.utils.Page;
 
 public interface BookService {
 	
@@ -13,5 +14,18 @@ public interface BookService {
 	void update_Book(Book book);
 	Book get_BookById(Serializable id);
 	List<Book> list_Book();
+	/**
+	 *  分页方法
+	 * @param pageSize 一页显示多少行
+	 * @param num	用户点击的页数
+	 * @return 页面持久层
+	 */
+	Page pageBook(int pageSize,int num);
+	/**
+	 * 模糊查询
+	 * @param vague 关键字
+	 * @return 返回book数组
+	 */
+	List<Book> get_BookByVague(String vague);
 
 }

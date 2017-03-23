@@ -25,7 +25,7 @@
 		<property name="classifyname" length="50" type="java.lang.String"></property>		
 		<property name="description" length="50" type="java.lang.String"></property>
 		
-		<set name="book">
+		<set name="book" lazy="false">
 			<key>
 			  <column name="cid"></column>
 			</key>

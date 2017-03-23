@@ -1,6 +1,7 @@
 package com.netStore.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Book implements Serializable{
 	
@@ -10,7 +11,7 @@ public class Book implements Serializable{
 	private float price;
 	private String filename;//更改后的唯一文件名
 	private String description;
-	
+	private Date addtime;
 	private Classify classify;
 	
 	public Classify getClassify() {
@@ -55,6 +56,12 @@ public class Book implements Serializable{
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Date getAddtime() {
+		return addtime;
+	}
+	public void setAddtime(Date addtime) {
+		this.addtime = addtime;
 	}
 	
 	

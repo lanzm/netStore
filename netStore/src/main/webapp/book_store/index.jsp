@@ -1,25 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Book Store</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-
+<link rel="stylesheet" type="text/css" href="book_store/style.css" />
 </head>
 <body>
 <div id="wrap">
 
        <div class="header">
-       		<div class="logo"><a href="index.html"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>            
+       		<div class="logo"><a href="welcome.action"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
         <div id="menu">
             <ul>                                                                       
-            <li class="selected"><a href="index.html">首页</a></li>
+            <li class="selected"><a href="welcome.action">首页</a></li>
             <li><a href="about.html">关于我们</a></li>
             <li><a href="category.html">书城</a></li>
             <li><a href="specials.html">特价书</a></li>
             <li><a href="myaccount.html">我的账号</a></li>
             <li><a href="register.html">注册</a></li>
-         <!--   <li><a href="details.html">prices</a></li>    --> 
+          <!-- <li><a href="details.html">prices</a></li>   -->
             <li><a href="contact.html">联系我们</a></li>
             </ul>
         </div>     
@@ -31,17 +35,17 @@
        <div class="center_content">
        	<div class="left_content">
         	
-            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>精选书籍</div>
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>精选书籍</div>
         
         	<div class="feat_prod_box">
             
-            	<div class="prod_img"><a href="details.html"><img src="images/myimages/spring.gif" alt="" title="" border="0" /></a></div>
+            	<div class="prod_img"><a href="details.html"><img src="/image/${book1.filename}" alt="" title="" border="0" /></a></div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
                     <div class="box_center">
                     <div class="prod_title">书籍简介</div>
-                    <p class="details">该书注重实践而又深入理论，由浅入深且详细介绍了Spring 2.0框架的几乎全部的内容，并重点突出2.0版本的新特性。展示如何应用Spring 2.0框架创建灵活高效的JavaEE应用，并提供了一个真正可直接部署的完整的Web应用程序</p>
+                    <p class="details">${book1.description}</p>
                     <a href="details.html" class="more">- 详情 -</a>
                     <div class="clear"></div>
                     </div>
@@ -54,14 +58,13 @@
             
         	<div class="feat_prod_box">
             
-            	<div class="prod_img"><a href="details.html"><img src="images/myimages/javaweb1.gif" alt="" title="" border="0" /></a></div>
+            	<div class="prod_img"><a href="details.html"><img src="/image/${book2.filename}" alt="" title="" border="0" /></a></div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
                     <div class="box_center">
                     <div class="prod_title">书籍简介</div>
-                    <p class="details">本书深刻且通俗地揭示Java Web开发内幕，使您由内而外地明白使用Java进行Web应用开发的全过程——从XML基础知识到HTTP详述及相关体验，从用Tomcat配置Web 站点到HttpServletResponse和HttpServletRequest的应用，以及JSP，JavaBean等Java Web开发相关方面都讲解得深入浅出、通俗易懂。.
-本书适合所有Web应用的开发人员、Java程序员在工作和学习中参考阅读，也适合作为相关专业本科生、研究生的学习参考资料，也可作为相关培训机构的培训教材</p>
+                    <p class="details">${book2.description}</p>
                     <a href="details.html" class="more">- 详情 -</a>
                     <div class="clear"></div>
                     </div>
@@ -73,34 +76,34 @@
             
             
             
-           <div class="title"><span class="title_icon"><img src="images/bullet2.gif" alt="" title="" /></span>New books</div> 
+           <div class="title"><span class="title_icon"><img src="book_store/images/bullet2.gif" alt="" title="" /></span>新增书籍</div> 
            
            <div class="new_products">
            
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${newbook1.bookname}</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="/image/${newbook1.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>
                     
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${newbook2.bookname}</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="/image/${newbook2.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>                    
-                    
+                   <!-- 
                     <div class="new_prod_box">
-                        <a href="details.html">product name</a>
+                        <a href="details.html">${newbook3.bookname}</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="/image/${newbook3.filename}" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>          
-            
+            	  --> 
             </div> 
           
             
@@ -110,12 +113,12 @@
         <div class="right_content">
         	<div class="languages_box">
             <span class="red">Languages:</span>
-            <a href="#" class="selected"><img src="images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="images/de.gif" alt="" title="" border="0" /></a>
+            <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="book_store/images/fr.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="book_store/images/de.gif" alt="" title="" border="0" /></a>
             </div>
                 <div class="currency">
-                <span class="red">Currency: </span>
+                <span class="red">货币: </span>
                 <a href="#">GBP</a>
                 <a href="#">EUR</a>
                 <a href="#" class="selected">USD</a>
@@ -123,22 +126,22 @@
                 
                 
               <div class="cart">
-                  <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" title="" /></span>My cart</div>
+                  <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
                   <div class="home_cart_content">
-                  3 x items | <span class="red">TOTAL: 100$</span>
+                  3 x 商品 | <span class="red">总金额: 100$</span>
                   </div>
-                  <a href="cart.html" class="view_cart">view cart</a>
+                  <a href="cart.html" class="view_cart">查看购物车</a>
               
               </div>
                        
             	
         
         
-             <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" title="" /></span>About Our Store</div> 
+             <div class="title"><span class="title_icon"><img src="book_store/images/bullet3.gif" alt="" title="" /></span>关于书店</div> 
              <div class="about">
              <p>
-             <img src="images/about.gif" alt="" title="" class="right" />
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+             <img src="book_store/images/about.gif" alt="" title="" class="right" />
+            	书是人类进步的阶梯 让我们在无穷的书店里探索无穷的真理好书不贵！谁说便宜没好书！！
              </p>
              
              </div>
@@ -149,7 +152,7 @@
                     <div class="new_prod_box">
                         <a href="details.html">product name</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="images/promo_icon.gif" alt="" title="" /></span>
+                        <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
                         <a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>

@@ -36,7 +36,26 @@
 				//把客户端传递过来的参数覆盖掉默认的配置  true为深度迭代
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
+				/**
+				 * 搜索点击事件
+				 */
+				$("#seach").click(function(){
+					// 当 输入框中值为空时
+					if($("#vague").attr("value") == ""){
+						// 刷新页面
+						$("#seach").attr("href","listBook.action");
+						return true;
+					}else{
+						//否则 修改路径
+						//设置字符集
+						//var vague = encodeURI($("#vague").val(),"utf-8");
+						//$("#seach").attr("href","vagueBook/" + $("#vague").val() + ".action");
+						//alert($("#seach").attr("href"));
+						return true;
+					}
+				});
 				
+	// ============================================================================== //
 				/**
 				 * 全选事件
 				 */

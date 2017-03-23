@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.netStore.UsersTest.UsersServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
-users_getById(com.netStore.UsersTest.UsersServiceTest)  Time elapsed: 0.001 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+users_getById(com.netStore.UsersTest.UsersServiceTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.ClassCastException: com.sun.proxy.$Proxy9 cannot be cast to com.netStore.service.impl.UsersServiceImpl
 	at com.netStore.UsersTest.UsersServiceTest.users_getById(UsersServiceTest.java:13)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

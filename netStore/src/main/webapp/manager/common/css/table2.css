@@ -69,4 +69,89 @@ background: #CF7A7A
 	 cursor: pointer;
      font-size: 12px;
      outline: none;
-        }
+	}
+
+.pre{
+     height: 37px;
+     line-height: 37px;
+     padding: 0 11px;
+     background: #E27575;
+     background-size: 5000px 37px
+     border: 1px #26bbdb solid;
+     border-radius: 3px;
+     /*color: #fff;*/
+     display: inline-block;
+     text-decoration: none;
+     text-shadow: 1px 1px 1px #9E3F3F;
+	 cursor: pointer;
+     font-size: 12px;
+     outline: none;
+	}
+	
+.nex{
+     height: 37px;
+     line-height: 37px;
+     padding: 0 11px;
+     background: #E27575;
+     background-size: 5000px 37px
+     border: 1px #26bbdb solid;
+     border-radius: 3px;
+     /*color: #fff;*/
+     display: inline-block;
+     text-decoration: none;
+     text-shadow: 1px 1px 1px #9E3F3F;
+	 cursor: pointer;
+     font-size: 12px;
+     outline: none;
+	}	
+	
+.num{
+     height: 37px;
+     line-height: 37px;
+     padding: 0 11px;
+     background: #E27575;
+     background-size: 5000px 37px
+     border: 1px #26bbdb solid;
+     border-radius: 3px;
+     /*color: #fff;*/
+     display: inline-block;
+     text-decoration: none;
+     text-shadow: 1px 1px 1px #9E3F3F;
+	 cursor: pointer;
+     font-size: 12px;
+     outline: none;
+	}	
+
+.seach{
+     height: 37px;
+     line-height: 37px;
+     padding: 0 11px;
+     background: #E27575;
+     background-size: 5000px 37px
+     border: 1px #26bbdb solid;
+     border-radius: 3px;
+     /*color: #fff;*/
+     display: inline-block;
+     text-decoration: none;
+     text-shadow: 1px 1px 1px #9E3F3F;
+	 cursor: pointer;
+     font-size: 12px;
+     outline: none;
+	}		
+	
+.vague{
+	border: 1px solid #DADADA;
+	color: #888;
+	height: 30px;
+	margin-bottom: 16px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 3px 3px 3px 5px;
+	width: 30%;
+	font-size: 5px;
+	line-height:15px;
+	box-shadow: inset 0px 1px 4px #ECECEC;
+	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}

@@ -11,9 +11,14 @@
 <script type="text/javascript" src="common/js/manager_plugin.js"></script>
 <script type="text/javascript" src="common/js/manager.js"></script>  
 <title>书籍管理</title>
-</head>
+</head> 
 <body>
-
+	<div align="center">
+		<form action="vagueBook.action">
+		<input id="vague" name="vague" class="vague"  placeholder="请输入关键字" >
+		<input class="seach" type="submit" value="搜索">
+		</form>
+	</div>
 	<div align="center">
 		<table id="table-2">
 			<tr>
@@ -49,6 +54,14 @@
 		<input id="del_book" class="del" type="button" value="删除所选">
 		<a id="update" class="update" href = "" ><font color="white">修改所选书籍</font></a>
 		<a class="add" href="addBook_bf.action"><font color="white">添加书籍</font></a>
+		<br>
+		<br>
+		第${page.thisPage}页/共${page.totalPage}页&nbsp;&nbsp;
+		<a class="pre" href="pageBook/${page.previousPage}.action"><font color="white">上一页</font></a>
+		<c:forEach begin="1" end="${page.totalPage}" var="i">
+			<a class="num" href="pageBook/${i}.action"><font color="white">${i}</font></a>
+		</c:forEach>
+		<a class="nex" href="pageBook/${page.nextPage}.action"><font color="white">下一页</font></a>
 	</div>
 
 </body>

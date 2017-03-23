@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.netStore.dao.BaseDao;
 
 public class BaseDaoImpl<T> implements BaseDao<T> {
