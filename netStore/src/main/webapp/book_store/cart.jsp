@@ -3,11 +3,12 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>书城</title>
+<title>Book Store</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
@@ -19,14 +20,14 @@
 
        <div class="header">
        		<div class="logo"><a href="welcome.action"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
-        <div id="menu">
+      <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
           <!--    <li><a href="about.html">关于我们</a></li> -->
             <li><a href="category.action">书城</a></li>
             <li><a href="specials.action">特价书</a></li>
-             <li><a id="myaccount" href="myaccount_bf.action"></a></li>
-            <li><a id="register" href="register.action">注册</a></li>
+            <li><a id="myaccount" href="myaccount_bf.action"></a></li>
+            <li><a id="register" href="register_bf.action">注册</a></li>
           <!-- <li><a href="details.html">prices</a></li>   -->
             <li><a href="contact.html">联系我们</a></li>
             </ul>
@@ -38,56 +39,81 @@
        
        <div class="center_content">
        	<div class="left_content">
-        	<div class="crumb_nav">
-            <a href="welcome.action">首页</a> &gt;&gt; 书城
-            </div>
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>书籍</div>
-           
-           <div class="new_products">
-           			<c:forEach items="${books}" var="b" varStatus="i">
-	                    <div class="new_prod_box">
-	                    	<div >
-	                        	<a class="li" href="details/${b.bid}.action" title="${b.bookname}" style="">
-	                        		${b.bookname}
-	                        	</a>
-	                    	</div>
-	                        <div class="new_prod_bg">
-		                        <c:if test="${b.promotions == true}"><!-- 判断是否促销 -->
-		                        	 <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
-		                        </c:if>
-		                        <a href="details/${b.bid}.action"><img src="/image/${b.filename}" alt="" title="" class="thumb" border="0" /></a>
-	                        </div>           
-	                    </div>
-           			</c:forEach>
-<!--  分页 -->
-	            <div id="page"  class="pagination">
-		            <a <c:if test="${page.thisPage == 1}">class="disabled"</c:if> <c:if test="${page.thisPage != 1}">href="pageBook/1.action"</c:if>  ><<</a>
-		            
-		            <c:forEach begin="1" end="${page.totalPage}" var="p">
-		            	<a href="pageBook/${p}.action" <c:if test="${page.thisPage == p}">class="current"</c:if> >${p}</a>
-		            </c:forEach>
-		            
-		            <a <c:if test="${page.thisPage == page.totalPage}">class="disabled"</c:if> <c:if test="${page.thisPage != page.totalPage}">href="pageBook/${page.totalPage}.action"</c:if> >>></a>
-	            </div>  
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>我的购物车</div>
+        
+        	<div class="feat_prod_box_details">
             
-            </div> 
-          
+            <table class="cart_table">
+            	<tr class="cart_title">
+                	<td>书籍图片</td>
+                	<td>书籍名称</td>
+                    <td>单本价格</td>
+                    <td>数量</td>
+                    <td>总价</td>               
+                </tr>
+                
+            	<tr>
+                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
+                	<td>Books</td>
+                    <td>100$</td>
+                    <td>1</td>
+                    <td>100$</td>               
+                </tr>          
+            	<tr>
+                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
+                	<td>Books</td>
+                    <td>100$</td>
+                    <td>1</td>
+                    <td>100$</td>               
+                </tr>                  
+            	<tr>
+                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
+                	<td>Books</td>
+                    <td>100$</td>
+                    <td>1</td>
+                    <td>100$</td>               
+                </tr>
+
+                <tr>
+                <td colspan="4" class="cart_total"><span class="red">TOTAL SHIPPING:</span></td>
+                <td> 250$</td>                
+                </tr>  
+                
+                <tr>
+                <td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
+                <td> 325$</td>                
+                </tr>                  
+            
+            </table>
+            <a href="#" class="continue">&lt; 继续购物</a>
+            <a href="#" class="checkout">结账 &gt;</a>
+            
+
+             
+            
+            </div>	
+            
+              
+
+            
+
             
         <div class="clear"></div>
         </div><!--end of left content-->
         
-     <div class="right_content">
-        	<div class="languages_box">
+        <div class="right_content">
+        
+                	<div class="languages_box">
             <span class="red">Languages:</span>
-            <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/de.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/fr.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/de.gif" alt="" title="" border="0" /></a>
             </div>
                 <div class="currency">
-                <span class="red">货币: </span>
+                <span class="red">Currency: </span>
                 <a href="#">GBP</a>
                 <a href="#">EUR</a>
-                <a href="#" class="selected">USD</a>
+                <a href="#"><strong>USD</strong></a>
                 </div>
                 
                 
@@ -195,7 +221,6 @@
     
 
 </div>
-
 
 </body>
 </html>

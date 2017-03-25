@@ -17,7 +17,7 @@ import com.netStore.utils.Page;
 import com.netStore.utils.RandomUtils;
 
 @Controller
-public class CategoryAction {
+public class CartAction {
 	
 	//自动注入 
 	@Autowired
@@ -27,48 +27,25 @@ public class CategoryAction {
 	public ClassifyService ClassifyService;
 	
 	
-	int msg = 1;
 	
-	@RequestMapping("/category")
-	public String category(Model model){
-		// 用户页面
-		Page page = BookService.pageBook(12, msg);
-		// 得到查询出来的 书籍
-		List<Book> lists = page.getBooks();
-		// 把数据送到网页
-		model.addAttribute("page", page);
-		model.addAttribute("books", lists);
-		// 分类信息
-		List<Classify> classifies = ClassifyService.list_Classify();
-		model.addAttribute("classifies", classifies);
+	@RequestMapping("/cart")
+	public String cart(Model model){
 		
-		//得到所有的书
-		List<Book> books = BookService.list_Book();
+		// 把分类传到页面
+		List<Classify> classifys = ClassifyService.list_Classify();
+		model.addAttribute("classifies", classifys);
 		// 得到 做促销的书籍
 		List<Book> booksPromotions = BookService.get_BookPromotions();
-		// 产生三个随机数
+		// 随机
 		RandomUtils randomUtils = new RandomUtils();
 		List<Integer> booksp = randomUtils.random(booksPromotions);
 		// 产生的促销书籍放到网页
 		model.addAttribute("bookPromotions1", booksPromotions.get(booksp.get(0)));
 		model.addAttribute("bookPromotions2", booksPromotions.get(booksp.get(1)));
-		model.addAttribute("bookPromotions3", booksPromotions.get(booksp.get(2)));
+		model.addAttribute("bookPromotions3", booksPromotions.get(booksp.get(2)));		
 		
-		return "../../book_store/category";
+		return "../../book_store/cart";
 	}
 
-	/**
-	 * 分页按钮方法
-	 * @param msg 网页传过来的分页数据
-	 * @return
-	 */
-	@RequestMapping("/pageBook/{msg}")
-	public String pageBook(@PathVariable int msg){
-		// 把值赋到全局变量中
-		this.msg = msg;
-		
-		return "redirect:/category.action";
-		
-	}
-	
+
 }

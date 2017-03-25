@@ -1,16 +1,16 @@
 package com.netStore.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Users implements Serializable{
 	
 	private long uid;
 	private String username;
 	private String password;
-	private Date birthday;
-	
-	
+	private String email;
+	private String phone;
+	private String company;
+	private String address;
 	public long getUid() {
 		return uid;
 	}
@@ -29,11 +29,29 @@ public class Users implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public String getEmail() {
+		return email;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	

@@ -7,12 +7,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的网上书城</title>
+<title>书籍详情</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
-<script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
-<script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
-<script type="text/javascript" src="book_store/js/manager_plugin.js"></script>
-<script type="text/javascript" src="book_store/js/manager.js"></script> 
+	<link rel="stylesheet" href="book_store/lightbox.css" type="text/css" media="screen" />
+	
+	<script src="book_store/js/prototype.js" type="text/javascript"></script>
+	<script src="book_store/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+	<script src="book_store/js/lightbox.js" type="text/javascript"></script>
+    <script type="text/javascript" src="book_store/js/java.js"></script>
+    
+    <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
+	<script type="text/javascript" src="book_store/js/manager_plugin.js"></script>
+	<script type="text/javascript" src="book_store/js/manager.js"></script> 
+    
 </head>
 <body>
 <div id="wrap">
@@ -38,19 +46,32 @@
        
        <div class="center_content">
        	<div class="left_content">
-        	
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>精选书籍</div>
+        	<div class="crumb_nav">
+            <a href="welcome.action">首页</a> &gt;&gt; ${book.bookname}
+            </div>
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>${book.bookname}</div>
         
-        	<div class="feat_prod_box">
+        	<div class="feat_prod_box_details">
             
-            	<div class="prod_img"><a href="details/${book1.bid}.action"><img src="/image/${book1.filename}" alt="" title="" border="0" /></a></div>
+            	<div class="prod_img"><a href="details/${book.bid}.action"><img src="/image/${book.filename}" alt="" title="" border="0" /></a>
+                <br /><br />
+                <a href="images/big_pic.jpg" rel="lightbox"><img src="book_store/images/zoom.gif" alt="" title="" border="0" /></a>
+                </div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
                     <div class="box_center">
                     <div class="prod_title">书籍简介</div>
-                    <p class="details">${book1.description}</p>
-                    <a href="details/${book1.bid}.action" class="more">- 详情 -</a>
+                    <p class="details">${book.description}</p>
+                     <div class="price"><strong>作者:</strong> <span class="red">${book.author}</span></div>
+                    <div class="price"><strong>价格:</strong> <span class="red">${book.price} ￥</span></div>
+                    <!-- 
+                    <div class="price"><strong>COLORS:</strong> 
+                    <span class="colors"><img src="images/color1.gif" alt="" title="" border="0" /></span>
+                    <span class="colors"><img src="images/color2.gif" alt="" title="" border="0" /></span>
+                    <span class="colors"><img src="images/color3.gif" alt="" title="" border="0" /></span></div> 
+                    -->
+                    <a href="details_cart.action" class="more"><img src="book_store/images/order_now.gif" alt="" title="" border="0" /></a>
                     <div class="clear"></div>
                     </div>
                     
@@ -59,73 +80,100 @@
             <div class="clear"></div>
             </div>	
             
+              
+            <div id="demo" class="demolayout">
+
+                <ul id="demo-nav" class="demolayout">
+                <li><a class="active" href="#tab1">More details</a></li>
+                <li><a class="" href="#tab2">Related books</a></li>
+                </ul>
+    
+            <div class="tabs-container">
             
-        	<div class="feat_prod_box">
-            
-            	<div class="prod_img"><a href="details/${book2.bid}.action"><img src="/image/${book2.filename}" alt="" title="" border="0" /></a></div>
-                
-                <div class="prod_det_box">
-                	<div class="box_top"></div>
-                    <div class="box_center">
-                    <div class="prod_title">书籍简介</div>
-                    <p class="details">${book2.description}</p>
-                    <a href="details/${book2.bid}.action" class="more">- 详情 -</a>
-                    <div class="clear"></div>
-                    </div>
+                    <div style="display: block;" class="tab" id="tab1">
+                                        <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                                        </p>
+                            <ul class="list">
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>                                          
+                            </ul>
+                                         <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                                        </p>                           
+                    </div>	
                     
-                    <div class="box_bottom"></div>
-                </div>    
-            <div class="clear"></div>
-            </div>      
-            
-            
-            
-           <div class="title"><span class="title_icon"><img src="book_store/images/bullet2.gif" alt="" title="" /></span>新增书籍</div> 
-           
-           <div class="new_products">
-           
+                            <div style="display: none;" class="tab" id="tab2">
                     <div class="new_prod_box">
-                        <a class="li" href="details/${newbook1.bid}.action" title="${newbook1.bookname}">${newbook1.bookname}</a>
+                        <a href="details.html">product name</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook1.bid}.action"><img src="/image/${newbook1.filename}" alt="" title="" class="thumb" border="0" /></a>
+                        <a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>
                     
                     <div class="new_prod_box">
-                        <a class="li" href="details/${newbook2.bid}.action" title="${newbook2.bookname}">${newbook2.bookname}</a>
+                        <a href="details.html">product name</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook2.bid}.action"><img src="/image/${newbook2.filename}" alt="" title="" class="thumb" border="0" /></a>
+                        <a href="details.html"><img src="images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
                     </div>                    
                     
                     <div class="new_prod_box">
-                        <a class="li" href="details/${newbook3.bid}.action" title="${newbook3.bookname}">${newbook3.bookname}</a>
+                        <a href="details.html">product name</a>
                         <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook3.bid}.action"><img src="/image/${newbook3.filename}" alt="" title="" class="thumb" border="0" /></a>
+                        <a href="details.html"><img src="images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
                         </div>           
-                    </div>          
-            	 
-            </div> 
-          
+                    </div>    
+
+                    <div class="new_prod_box">
+                        <a href="details.html">product name</a>
+                        <div class="new_prod_bg">
+                        <a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
+                        </div>           
+                    </div>
+                    
+                    <div class="new_prod_box">
+                        <a href="details.html">product name</a>
+                        <div class="new_prod_bg">
+                        <a href="details.html"><img src="images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
+                        </div>           
+                    </div>                    
+                    
+                    <div class="new_prod_box">
+                        <a href="details.html">product name</a>
+                        <div class="new_prod_bg">
+                        <a href="details.html"><img src="images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
+                        </div>           
+                    </div>  
+
+
+                   
+                    <div class="clear"></div>
+                            </div>	
+            
+            </div>
+
+
+			</div>
+            
+
             
         <div class="clear"></div>
         </div><!--end of left content-->
         
         <div class="right_content">
-        	<div class="languages_box">
+        
+                	<div class="languages_box">
             <span class="red">Languages:</span>
-            <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/de.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/fr.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/de.gif" alt="" title="" border="0" /></a>
             </div>
                 <div class="currency">
-                <span class="red">货币: </span>
+                <span class="red">Currency: </span>
                 <a href="#">GBP</a>
                 <a href="#">EUR</a>
-                <a href="#" class="selected">USD</a>
+                <a href="#"><strong>USD</strong></a>
                 </div>
                 
                 
@@ -233,6 +281,12 @@
     
 
 </div>
-
 </body>
+<script type="text/javascript">
+
+var tabber1 = new Yetii({
+id: 'demo'
+});
+
+</script>
 </html>

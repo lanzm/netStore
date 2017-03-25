@@ -1,8 +1,11 @@
-G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\utils\Random.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\user\MyAccountAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\ClassifyDao.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\user\CategoryAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\BaseDao.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\user\RegisterAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\impl\UsersDaoImpl.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\impl\BaseDaoImpl.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\user\SpecialsAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\utils\Page.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\service\ClassifyService.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\service\impl\UsersServiceImpl.java
@@ -16,12 +19,14 @@ G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\service\BookServi
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\service\UsersService.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\pojo\Classify.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\user\IndexAction.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\utils\NewBooks.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\UsersAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\service\impl\ManagerServiceImpl.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\BookAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\impl\ManagerDaoImpl.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\ClassifyAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\pojo\Book.java
+G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\utils\RandomUtils.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\action\ManagerAction.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\dao\impl\BookDaoImpl.java
 G:\For Jee\eclipse\Program\netStore\src\main\java\com\netStore\pojo\Manager.java

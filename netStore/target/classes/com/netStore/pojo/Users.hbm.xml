@@ -24,6 +24,9 @@
 		
 		<property name="username" length="20" type="java.lang.String"></property>		
 		<property name="password" length="50" type="java.lang.String"></property>
-		<property name="birthday" type="date"></property>
+		<property name="email" length="50" type="java.lang.String"></property>
+		<property name="phone" length="20" type="java.lang.String"></property>
+		<property name="company" length="50" type="java.lang.String"></property>
+		<property name="address" length="50" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>

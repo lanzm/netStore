@@ -27,7 +27,7 @@ import com.netStore.pojo.Classify;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
 import com.netStore.utils.Page;
-import com.netStore.utils.Random;
+import com.netStore.utils.RandomUtils;
 
 @Controller
 @RequestMapping("/manager")
@@ -184,7 +184,7 @@ public class BookAction {
 	
 		// 图片名称
 		String filename = image.getOriginalFilename();
-		Random random = new Random();
+		RandomUtils random = new RandomUtils();
 		String photo = random.genGUID();
 		if(filename != null){
 			filename = photo + "." + FilenameUtils.getExtension(filename);
@@ -245,7 +245,7 @@ public class BookAction {
 		}
 		// 图片名称
 		String filename = image.getOriginalFilename();
-		Random random = new Random();
+		RandomUtils random = new RandomUtils();
 		String photo = random.genGUID();
 		if(filename != null){
 			filename = photo + "." + FilenameUtils.getExtension(filename);

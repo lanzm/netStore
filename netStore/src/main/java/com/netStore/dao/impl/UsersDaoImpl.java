@@ -7,5 +7,4 @@ import com.netStore.pojo.Users;
 @Repository("UsersDao")
 public class UsersDaoImpl extends BaseDaoImpl<Users> implements UsersDao<Users>{
 
-	
 }

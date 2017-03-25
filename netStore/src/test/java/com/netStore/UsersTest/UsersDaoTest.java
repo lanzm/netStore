@@ -14,23 +14,23 @@ public class UsersDaoTest extends BaseSpring{
 	public void save_users(){
 		
 		UsersDao usersDao = (UsersDao) context.getBean("UsersDao");
+		
 		Users users = new Users();
-		users.setBirthday(new Date());
-		users.setPassword("123");
-		users.setUsername("123");
+		users.setUsername("1");
+		users.setPhone("1");
+		
 		
 		//usersDao.save(users);
 		
 	}
 
 	
-	
 	@Test
 	public void get_usersByIdtest(){
 		
-		UsersDao usersDao = (UsersDao) context.getBean("UsersDao");
-		Users users = (Users) usersDao.getById(1L);
-		System.out.println(users.getUsername());
+//		UsersDao usersDao = (UsersDao) context.getBean("UsersDao");
+//		Users users = (Users) usersDao.getById(1L);
+//		System.out.println(users.getUsername());
 		
 	}
 

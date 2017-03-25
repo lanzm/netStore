@@ -58,7 +58,7 @@ public class BookServiceImpl implements BookService{
 	public Page pageBook(int pageSize, int num) {
 		// 总的书籍记录有多少条
 		int totalPagesize = (int) bookDao.countBook();
-		System.out.println(totalPagesize);
+		//System.out.println(totalPagesize);
 		// 把当前页码和总的记录条数传进来
 		Page page = new Page(pageSize , num , totalPagesize);
 		// 把查询出来的书籍存到page持久

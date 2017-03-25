@@ -520,7 +520,7 @@ border:1px solid #795636;
 color: #fff;
 background-color: #795636;
 }
-div.pagination span.current {
+div.pagination a.current {
 padding: 2px 5px 2px 5px;
 margin-right: 2px;
 border: 1px solid #795636;
@@ -528,7 +528,7 @@ font-weight: bold;
 background-color: #795636;
 color: #FFF;
 }
-div.pagination span.disabled {
+div.pagination a.disabled {
 padding: 2px 5px 2px 5px;
 margin-right: 2px;
 border: 1px solid #f3f3f3;
