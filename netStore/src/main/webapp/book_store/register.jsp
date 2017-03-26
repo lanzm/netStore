@@ -115,9 +115,9 @@
              <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
                   <div class="home_cart_content">
-                  3 x 商品 | <span class="red">总金额: 100$</span>
+                   <font id="num"></font> x 商品 | <span class="red">总金额: <font id="money"></font>￥</span>
                   </div>
-                  <a href="cart.html" class="view_cart">查看购物车</a>
+                  <a href="cart.action" class="view_cart">查看购物车</a>
               
               </div>
                        

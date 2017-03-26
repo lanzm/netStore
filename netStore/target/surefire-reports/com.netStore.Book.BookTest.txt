@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.netStore.Book.BookTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.223 sec <<< FAILURE!
-vagueBookTest(com.netStore.Book.BookTest)  Time elapsed: 0.013 sec  <<< ERROR!
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.103 sec <<< FAILURE!
+vagueBookTest(com.netStore.Book.BookTest)  Time elapsed: 0.011 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.netStore.Book.BookTest.vagueBookTest(BookTest.java:61)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

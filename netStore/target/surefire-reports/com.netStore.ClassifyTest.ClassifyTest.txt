@@ -2,7 +2,7 @@
 Test set: com.netStore.ClassifyTest.ClassifyTest
 -------------------------------------------------------------------------------
 Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
-classifyGetByNameTest(com.netStore.ClassifyTest.ClassifyTest)  Time elapsed: 0.001 sec  <<< ERROR!
+classifyGetByNameTest(com.netStore.ClassifyTest.ClassifyTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.netStore.ClassifyTest.ClassifyTest.classifyGetByNameTest(ClassifyTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

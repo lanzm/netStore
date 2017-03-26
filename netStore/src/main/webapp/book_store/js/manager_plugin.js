@@ -17,6 +17,34 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				
+			
+				/**
+				 * 把存在cookie中的购物车信息取出
+				 */
+				// 当 购物数量不为空时
+				if($.cookie('itemsnum') != null){
+					$("#num").text($.cookie('itemsnum'));
+				}else{
+					$("#num").text("0");
+				}
+				// 当 金额不为空时
+				if($.cookie('money') != null){
+					$("#money").text($.cookie('money'));
+				}else{
+					$("#money").text("0");
+				}
+				// 购物车的总数量
+				if($.cookie('totalnum') != null){
+					$("#totalnum").text($.cookie('totalnum') + " 本");
+				}else{
+					$("#totalnum").text("0 本")
+				}
+				// 购物车总金额
+				if($.cookie('totalmoney') != null){
+					$("#totalmoney").text($.cookie('totalmoney') + "￥");
+				}else{
+					$("#totalmoney").text("0 ￥");
+				}
 				/**
 				 * 取出用户名的cookie
 				 */

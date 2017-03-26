@@ -1,9 +1,6 @@
 package com.netStore.action.user;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.netStore.pojo.Book;
 import com.netStore.pojo.Classify;
+import com.netStore.pojo.Orders;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
-import com.netStore.utils.Page;
+import com.netStore.service.OrderService;
+import com.netStore.utils.Cart;
 import com.netStore.utils.RandomUtils;
 
 @Controller
@@ -25,9 +24,16 @@ public class DetailsAction {
 	//自动注入 
 	@Autowired
 	public ClassifyService ClassifyService;
+	@Autowired
+	public OrderService OrderService;
 	
-	
+	Cart cart = new Cart();
 	long bid = 0;
+	/**
+	 * 接收路径传来的id值
+	 * @param bid
+	 * @return
+	 */
 	@RequestMapping("/details/{bid}")
 	public String details(@PathVariable long bid){
 		
@@ -58,5 +64,6 @@ public class DetailsAction {
 		
 		return "../../book_store/details";
 	}
-
+	
+	
 }

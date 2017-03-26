@@ -1,6 +1,7 @@
+com\netStore\springTest\SpringTest.class
+com\netStore\Order\OrderTest.class
 com\netStore\Book\BookTest.class
 com\netStore\UsersTest\UsersServiceTest.class
 com\netStore\ClassifyTest\ClassifyTest.class
-com\netStore\springTest\SpringTest.class
 com\netStore\utils\BaseSpring.class
 com\netStore\UsersTest\UsersDaoTest.class

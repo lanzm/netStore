@@ -15,4 +15,5 @@
    	<import resource="applicationContext-manager.xml"/>
   	<import resource="applicationContext-classify.xml"/>
   	<import resource="applicationContext-book.xml"/>
+  	<import resource="applicationContext-order.xml"/>
 </beans>

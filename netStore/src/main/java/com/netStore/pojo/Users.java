@@ -1,6 +1,7 @@
 package com.netStore.pojo;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class Users implements Serializable{
 	
@@ -11,6 +12,9 @@ public class Users implements Serializable{
 	private String phone;
 	private String company;
 	private String address;
+	
+	private Set<Orders> orders;
+	
 	public long getUid() {
 		return uid;
 	}
@@ -53,6 +57,13 @@ public class Users implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public Set<Orders> getOrders() {
+		return orders;
+	}
+	public void setOrders(Set<Orders> orders) {
+		this.orders = orders;
+	}
+	
 	
 	
 

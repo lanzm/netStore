@@ -2,6 +2,7 @@ package com.netStore.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 public class Book implements Serializable{
 	
@@ -14,6 +15,7 @@ public class Book implements Serializable{
 	private Date addtime;  // 书籍加入时间
 	private boolean promotions; // 书籍是否做促销
 	private Classify classify;
+	private Set<Orders> orders;
 	
 	public Classify getClassify() {
 		return classify;
@@ -69,6 +71,12 @@ public class Book implements Serializable{
 	}
 	public void setPromotions(boolean promotions) {
 		this.promotions = promotions;
+	}
+	public Set<Orders> getOrders() {
+		return orders;
+	}
+	public void setOrders(Set<Orders> orders) {
+		this.orders = orders;
 	}
 	
 	

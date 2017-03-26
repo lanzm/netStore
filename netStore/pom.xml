@@ -103,6 +103,12 @@
 	    <version>3.6.10.Final</version>
 	</dependency>
 	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.8.9</version>
+	</dependency>
+	
 	<!-- ehcache -->
 	<dependency>
 	    <groupId>net.sf.ehcache</groupId>

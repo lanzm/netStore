@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Book Store</title>
+<title>我的购物车</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
@@ -43,50 +43,49 @@
         
         	<div class="feat_prod_box_details">
             
-            <table class="cart_table">
+            <table id="cart_table" class="cart_table">
             	<tr class="cart_title">
                 	<td>书籍图片</td>
                 	<td>书籍名称</td>
                     <td>单本价格</td>
                     <td>数量</td>
-                    <td>总价</td>               
+                    <td>单计</td>
+                    <td>操作</td>               
                 </tr>
                 
-            	<tr>
-                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
-                	<td>Books</td>
-                    <td>100$</td>
-                    <td>1</td>
-                    <td>100$</td>               
-                </tr>          
-            	<tr>
-                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
-                	<td>Books</td>
-                    <td>100$</td>
-                    <td>1</td>
-                    <td>100$</td>               
-                </tr>                  
-            	<tr>
-                	<td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title="" border="0" class="cart_thumb" /></a></td>
-                	<td>Books</td>
-                    <td>100$</td>
-                    <td>1</td>
-                    <td>100$</td>               
-                </tr>
+                <c:forEach items="${cart}" var="c">
+                	
+	            	<tr>
+	                	<td><a href="details/${c.value.book.bid}.action"><img src="/image/${c.value.book.filename}" alt="" title="" border="0" class="cart_thumb" /></a></td>
+	                	<td>${c.value.book.bookname}</td>
+	                    <td>${c.value.book.price}￥</td>
+	                    <td>
+		                    <div class="gw_num">
+								<a id="jian" class="jian" href="delcart/${c.value.book.bid}.action">-</a>
+								<input id="numm" size="1" type="text" value="${c.value.totalbook}" class="num" disabled="disabled"/>
+								<a id="add" class="add" href="addcart/${c.value.book.bid}.action">+</a>
+							</div>
+	                    </td>
+	                    <td>${c.value.money}</td>
+	                    <td><a href="romcart/${c.value.book.bid}.action">删除</a></td>               
+	                </tr>          
+                	
+                </c:forEach>
+            
 
                 <tr>
-                <td colspan="4" class="cart_total"><span class="red">TOTAL SHIPPING:</span></td>
-                <td> 250$</td>                
+                <td colspan="4" class="cart_total"><span class="red">商品总数:</span></td>
+                <td id="totalnum"></td>                
                 </tr>  
                 
                 <tr>
-                <td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
-                <td> 325$</td>                
+                <td colspan="4" class="cart_total"><span class="red">总计:</span></td>
+                <td id="totalmoney"></td>                
                 </tr>                  
             
             </table>
-            <a href="#" class="continue">&lt; 继续购物</a>
-            <a href="#" class="checkout">结账 &gt;</a>
+            <a href="category.action" class="continue">&lt; 继续购物</a>
+            <a href="pay.action" class="checkout">结账 &gt;</a>
             
 
              
@@ -120,9 +119,9 @@
              <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
                   <div class="home_cart_content">
-                  3 x 商品 | <span class="red">总金额: 100$</span>
+                  <font id="num"></font> x 商品 | <span class="red">总金额: <font id="money"></font>￥</span>
                   </div>
-                  <a href="cart.html" class="view_cart">查看购物车</a>
+                  <a href="cart.action" class="view_cart">查看购物车</a>
               
               </div>
                        

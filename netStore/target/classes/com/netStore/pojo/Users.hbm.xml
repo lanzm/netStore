@@ -15,7 +15,7 @@
 			  column 属性的名称对应的表的字段   可以不写  默认值就是属性的名称
 			  length  属性的名称对应的表的字段的长度  如果不写，默认是最大的长度
 		 -->
-		<id name="uid" column="uid" length="10">
+		<id name="uid" column="uid" length="50">
 			<!-- 
 				主键的产生器
 			 -->
@@ -28,5 +28,13 @@
 		<property name="phone" length="20" type="java.lang.String"></property>
 		<property name="company" length="50" type="java.lang.String"></property>
 		<property name="address" length="50" type="java.lang.String"></property>
+		
+		<set name="orders" lazy="false">
+			<key>
+			  <column name="uid"></column>
+			</key>
+			<one-to-many class="com.netStore.pojo.Orders"/>
+		</set>
+		
 	</class>
 </hibernate-mapping>
