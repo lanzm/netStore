@@ -80,6 +80,12 @@ public class BookServiceImpl implements BookService{
 		return bookDao.getPromotions();
 	}
 
+	@Override
+	public List<Book> get_BookByClassify(long cid) {
+		
+		return bookDao.get_bookByClassify(cid);
+	}
+
 	
 
 

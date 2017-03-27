@@ -1,9 +1,16 @@
 package com.netStore.action.user;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.sql.ordering.antlr.OrderingSpecification.Ordering;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +18,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.netStore.pojo.Book;
 import com.netStore.pojo.Classify;
+import com.netStore.pojo.OrderItem;
+import com.netStore.pojo.Orders;
+import com.netStore.pojo.Users;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
+import com.netStore.service.OrderService;
+import com.netStore.service.OrderItemService;
+import com.netStore.service.UsersService;
 import com.netStore.utils.Cart;
+import com.netStore.utils.Cartitems;
 import com.netStore.utils.RandomUtils;
 
 @Controller
@@ -25,10 +39,71 @@ public class CartAction {
 	//自动注入 
 	@Autowired
 	public ClassifyService ClassifyService;
+	@Autowired
+	public UsersService UsersService;
+	@Autowired
+	public OrderService OrderService;
+	@Autowired
+	public OrderItemService OrderItemService;
 	
 	Cart cart = new Cart();
 	long bid = 0;
 	
+	@RequestMapping("/pay")
+	public String pay(HttpServletRequest request){
+		
+		boolean flag = true;
+		String username = null;
+		//判断是否登陆
+		Cookie[] cookies = request.getCookies();
+		if(cookies == null){
+			flag = false;
+		}else{
+			for (Cookie cookie : cookies) {
+				if(cookie.getName().equals("username")){
+					username = cookie.getValue();
+					flag = false;
+					break;
+				}
+			}
+		}
+		// 如果没有用户则跳转到登陆页面
+		if(flag){
+			return "redirect:/myaccount_bf.action";
+		}
+		
+		// 新建订单，开始存订单
+		Orders orders = new Orders();
+		// 查询出现在的用户是谁
+		Users user = UsersService.get_usersByName(username);
+		// 设置状态
+		orders.setStatus("0");
+		orders.setTotalmoney(cart.getTotalmoney());
+		orders.setTotalnum(String.valueOf(cart.getTotalnum()));
+		orders.setUsers(user);
+		OrderService.save_order(orders);
+		// 遍历 购物车 把单个书籍提取出来，并存到数据库中
+		for(Entry<Long, Cartitems> item : cart.getItems().entrySet()){
+			OrderItem orderItem = new OrderItem();
+			orderItem.setBook(item.getValue().getBook());
+			orderItem.setMoney(item.getValue().getMoney());
+			orderItem.setNum(String.valueOf(item.getValue().getTotalbook()));
+			orderItem.setOrders(orders);
+			// 保存单项
+			OrderItemService.save_orderItem(orderItem);
+		}
+		
+		return "../../book_store/cart";
+		
+		
+	}
+	
+	/**
+	 * 购物车页面
+	 * @param model 网页数据
+	 * @param request 判断是否有cookie
+	 * @return 购物车页面
+	 */
 	@RequestMapping("/cart")
 	public String cart(Model model,HttpServletRequest request){
 		
@@ -40,7 +115,7 @@ public class CartAction {
 			flag = true;
 		}else{
 			for (Cookie cookie : cookies) {
-				// 如果cookie中没有 书籍数量 说明 是重新开启浏览器
+				// 如果cookie中有 书籍数量 说明 不是重新开启浏览器
 				if(cookie.getName().equals("itemsnum")){
 					flag = false;
 					break;

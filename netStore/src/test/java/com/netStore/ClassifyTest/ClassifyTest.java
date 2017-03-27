@@ -22,9 +22,9 @@ public class ClassifyTest extends BaseSpring{
 	@Test
 	public void classifyGetByNameTest(){
 		
-		ClassifyDao classifyDao = (ClassifyDao) context.getBean("ClassifyDao");
-		Classify classify = classifyDao.getByName("jsp");
-		System.out.println("byname的 " + classify.getCid());
+//		ClassifyDao classifyDao = (ClassifyDao) context.getBean("ClassifyDao");
+//		Classify classify = classifyDao.getByName("jsp");
+//		System.out.println("byname的 " + classify.getCid());
 	}
 	
 	@Test

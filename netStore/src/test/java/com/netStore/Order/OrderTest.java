@@ -16,9 +16,9 @@ public class OrderTest extends BaseSpring{
 		OrderDao orderDao = (OrderDao) context.getBean("OrderDao");
 		Orders t = new Orders();
 		t.setStatus("0");
-		t.setMoney(11);
+		//t.setMoney(11);
 		
-		orderDao.save(t);
+		//orderDao.save(t);
 		
 	}
 

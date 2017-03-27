@@ -26,9 +26,9 @@
             <li><a href="category.action">书城</a></li>
             <li><a href="specials.action">特价书</a></li>
              <li><a id="myaccount" href="myaccount_bf.action"></a></li>
-            <li><a id="register" href="register.action">注册</a></li>
+            <li><a id="register" href="register_bf.action">注册</a></li>
           <!-- <li><a href="details.html">prices</a></li>   -->
-            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
             
@@ -77,6 +77,7 @@
         </div><!--end of left content-->
         
      <div class="right_content">
+     <!-- 
         	<div class="languages_box">
             <span class="red">Languages:</span>
             <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
@@ -89,7 +90,7 @@
                 <a href="#">EUR</a>
                 <a href="#" class="selected">USD</a>
                 </div>
-                
+              -->   
                 
              <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
@@ -148,7 +149,7 @@
                 
                 <ul class="list">
                 	<c:forEach items="${classifies}" var="c">
-                		<li><a href="#">${c.classifyname}</a></li>
+                		<li><a href="classify/${c.cid}.action">${c.classifyname}</a></li>
                 	</c:forEach>
                 </ul>
              

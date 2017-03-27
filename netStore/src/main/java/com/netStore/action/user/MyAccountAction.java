@@ -74,7 +74,7 @@ public class MyAccountAction {
 		//标识符
 		boolean flag = false;
 		// 如果 输入为空时
-		if(username == null || password == null){
+		if(username.equals(null) || password.equals(null)){
 			flag = false;
 		}else{
 			// 不为空时，遍历查询是否正确

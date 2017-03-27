@@ -33,5 +33,14 @@ public class UsersDaoTest extends BaseSpring{
 //		System.out.println(users.getUsername());
 		
 	}
+	
+	@Test
+	public void get_usersByNametest(){
+		
+		UsersDao usersDao = (UsersDao) context.getBean("UsersDao");
+		Users users = (Users) usersDao.get_UsersByName("a123");
+		System.out.println("000000000000000000000000" + users.getUsername());
+		
+	}
 
 }

@@ -69,6 +69,13 @@ public class BookTest extends BaseSpring{
 		System.out.println("================getPromotions" + books.get(0).getBookname());
 	}
 	
+	@Test
+	public void get_BookByClassifyTest(){
+		
+		BookDao bookDao = (BookDao) context.getBean("BookDao");
+		List<Book> books = bookDao.get_bookByClassify(1);
+		System.out.println("================classify" + books.get(0).getBookname());
+	}
 	
 	
 }

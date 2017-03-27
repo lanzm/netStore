@@ -45,12 +45,12 @@
             
             <table id="cart_table" class="cart_table">
             	<tr class="cart_title">
+            		<td>订单号</td>
                 	<td>书籍图片</td>
                 	<td>书籍名称</td>
                     <td>单本价格</td>
                     <td>数量</td>
                     <td>单计</td>
-                    <td>操作</td>               
                 </tr>
                 
                 <c:forEach items="${cart}" var="c">
@@ -59,15 +59,8 @@
 	                	<td><a href="details/${c.value.book.bid}.action"><img src="/image/${c.value.book.filename}" alt="" title="" border="0" class="cart_thumb" /></a></td>
 	                	<td>${c.value.book.bookname}</td>
 	                    <td>${c.value.book.price}￥</td>
-	                    <td>
-		                    <div class="gw_num">
-								<a id="jian" class="jian" href="delcart/${c.value.book.bid}.action">-</a>
-								<input id="numm" size="1" type="text" value="${c.value.totalbook}" class="num" disabled="disabled"/>
-								<a id="add" class="add" href="addcart/${c.value.book.bid}.action">+</a>
-							</div>
-	                    </td>
+	                    <td>${c.value.totalbook}</td>
 	                    <td>${c.value.money}</td>
-	                    <td><a href="romcart/${c.value.book.bid}.action">删除</a></td>               
 	                </tr>          
                 	
                 </c:forEach>

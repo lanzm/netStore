@@ -32,14 +32,18 @@ public class RegisterAction {
 	
 	/**
 	 * 异步数据传送，表单验证
-	 * @return 返回用户信息
+	 * @return返回用户信息
 	 */
 	@RequestMapping("/register_js")
 	public @ResponseBody List register_js(){
 		// js请求 返回 用户信息
 		return UsersService.list_users();
 	}
-	
+	/**
+	 * 注册页面之前向页面送数据
+	 * @param model
+	 * @return注册页面
+	 */
 	@RequestMapping("/register_bf")
 	public String register_bf(Model model){
 		
@@ -63,7 +67,7 @@ public class RegisterAction {
 	/**
 	 * 注册用户
 	 * @param users 
-	 * @return 返回登陆页面
+	 * @return返回登陆页面
 	 */
 	@RequestMapping("/register")
 	public String register(Users users){

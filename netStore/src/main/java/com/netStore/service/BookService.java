@@ -32,5 +32,11 @@ public interface BookService {
 	 * @return 返回书籍集合
 	 */
 	List<Book> get_BookPromotions();
+	/**
+	 * 分类查询书籍
+	 * @param cid 分类id
+	 * @return 书籍集合
+	 */
+	List<Book> get_BookByClassify(long cid);
 
 }

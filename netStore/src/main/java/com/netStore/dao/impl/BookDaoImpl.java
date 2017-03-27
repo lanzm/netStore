@@ -53,6 +53,12 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao<Book>{
 		List<Book> books = (List<Book>) this.getHibernateTemplate().find(" from Book where promotions = true ");
 		return books;
 	}
+
+	@Override
+	public List<Book> get_bookByClassify(long cid) {
+		List<Book> books = (List<Book>) this.getHibernateTemplate().find(" from Book where cid = " + cid + " ");
+		return books;
+	}
 	
 	
 

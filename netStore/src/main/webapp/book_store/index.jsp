@@ -115,6 +115,7 @@
         </div><!--end of left content-->
         
         <div class="right_content">
+        <!-- 
         	<div class="languages_box">
             <span class="red">Languages:</span>
             <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
@@ -127,7 +128,7 @@
                 <a href="#">EUR</a>
                 <a href="#" class="selected">USD</a>
                 </div>
-                
+               -->  
                 
               <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
@@ -186,7 +187,7 @@
                 
                 <ul class="list">
                 	<c:forEach items="${classifies}" var="c">
-                		<li><a href="#">${c.classifyname}</a></li>
+                		<li><a href="classify/${c.cid}.action">${c.classifyname}</a></li>
                 	</c:forEach>
                 </ul>
              

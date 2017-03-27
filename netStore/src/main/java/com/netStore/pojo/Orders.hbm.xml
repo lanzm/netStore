@@ -23,15 +23,22 @@
 		</id>
 		
 		<property name="status" length="10" type="java.lang.String"></property>		
-		<property name="money" type="float"></property>
-		
+		<property name="totalmoney" type="float"></property>
+		<property name="totalnum" length="50" type="java.lang.String"></property>
 		<many-to-one name="users" class="com.netStore.pojo.Users" column="uid" lazy="false"></many-to-one>
-		
+		<set name="orderitem">
+			<key>
+				<column name="oid"></column>
+			</key>
+			<one-to-many class="com.netStore.pojo.OrderItem" />
+		</set>
+		<!-- 
 		<set name="book" table="orders_books">
 			<key>
 			  <column name="oid"></column>
 			</key>
 			<many-to-many class="com.netStore.pojo.Book" column="bid"></many-to-many>
 		</set>
+		 -->
 	</class>
 </hibernate-mapping>

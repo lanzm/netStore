@@ -57,5 +57,11 @@ public class UsersServiceImpl implements UsersService{
 		
 	}
 
+	@Override
+	public Users get_usersByName(String username) {
+		
+		return userdaoimpl.get_UsersByName(username);
+	}
+
 
 }

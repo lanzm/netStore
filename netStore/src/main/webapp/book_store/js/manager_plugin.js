@@ -94,7 +94,7 @@
 					}else if(!reg_name.test($("#username").val())){
 					
 						$("#name").attr("color","red");
-						$("#name").text("用户名由字母开头的3-10位的字母数字组成");
+						$("#name").text("用户名由字母开头的3-10位的字母数字组成,且字母开头");
 						flag = false;
 					}else{
 						$("#name").attr("color","green");

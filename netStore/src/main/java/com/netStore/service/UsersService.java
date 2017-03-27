@@ -12,5 +12,6 @@ public interface UsersService {
 	void update_users(Users users);
 	Users get_usersById(Serializable id);
 	List<Users> list_users();
+	Users get_usersByName(String username);
 
 }

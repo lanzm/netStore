@@ -16622,4 +16622,1036 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have a
   [INFO] [2017-03-25 21:25:36][org.hibernate.tool.hbm2ddl.DatabaseMetadata]table not found: orders
   [INFO] [2017-03-25 21:25:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
   [INFO] [2017-03-25 21:25:37][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@d645b1] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 09:58:51][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b554cc: startup date [Mon Mar 27 09:58:51 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 09:58:52][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 09:58:52][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 09:58:52][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 09:58:52][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 09:58:52][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 09:58:52][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 09:58:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 09:58:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 09:58:53][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 09:58:53][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 09:58:53][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 09:58:53][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.book -> orders_books
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 09:58:53][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 09:58:53][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 09:58:53][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 09:58:53][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 09:58:53][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@1778add
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@1778add
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@1302995
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@38ccb8
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@2ed0cd
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@2ed0cd
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@19e8ef7
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@1107c50
+  [INFO] [2017-03-27 09:58:53][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@1133c06
+  [WARN] [2017-03-27 09:58:53][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 09:58:54][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, oid, status]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_e' (errno: 150)
+  [INFO] [2017-03-27 09:58:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 09:58:54][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@15f4d54] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:37:53][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:37:53 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:37:54][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:37:56][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:37:56][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:37:56][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:56][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:37:57][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:37:57][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:37:57][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:37:57][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:37:57][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:37:57][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:37:57][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:37:57][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:37:58][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:37:58][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:37:58][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:37:58][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:37:58][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:37:58][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:37:59][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_43' (errno: 150)
+  [ERROR] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_43' (errno: 150)
+  [INFO] [2017-03-27 16:37:59][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:37:59][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [WARN] [2017-03-27 16:38:00][org.hibernate.util.JDBCExceptionReporter]SQL Error: 1054, SQLState: 42S22
+  [ERROR] [2017-03-27 16:38:00][org.hibernate.util.JDBCExceptionReporter]Unknown column 'a123' in 'where clause'
+  [INFO] [2017-03-27 16:38:51][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:38:51 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:38:51][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:38:52][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:38:52][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:38:52][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:38:52][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:38:52][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:38:52][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:38:52][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:38:52][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:38:52][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:38:53][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:38:53][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_47' (errno: 150)
+  [ERROR] [2017-03-27 16:38:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:38:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_47' (errno: 150)
+  [INFO] [2017-03-27 16:38:54][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:38:54][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:40:42][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a6d14e: startup date [Mon Mar 27 16:40:42 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:40:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:40:43][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:40:43][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:40:43][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:40:43][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:40:44][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:40:44][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:40:44][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:40:44][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:40:44][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@2706a7
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@2706a7
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@1a4b042
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@b2bb0c
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@7af41b
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@7af41b
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@b6decd
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@7045b9
+  [INFO] [2017-03-27 16:40:44][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@199f5e0
+  [WARN] [2017-03-27 16:40:44][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:40:45][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4a' (errno: 150)
+  [ERROR] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4a' (errno: 150)
+  [INFO] [2017-03-27 16:40:45][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:40:45][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@e3a2b2] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:41:04][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:41:04 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:41:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:41:05][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:41:05][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:41:05][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:41:05][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:41:05][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:41:05][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:41:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:41:06][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:41:06][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:41:06][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:41:06][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:41:06][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:41:06][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:41:06][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:41:06][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:41:07][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4c' (errno: 150)
+  [ERROR] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4c' (errno: 150)
+  [INFO] [2017-03-27 16:41:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:41:07][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:43:04][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:43:04 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:43:04][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:43:05][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:43:05][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:43:05][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:43:05][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:43:05][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:43:06][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:43:06][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:43:06][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:43:06][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:43:06][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:43:06][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:43:06][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:43:07][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4f' (errno: 150)
+  [ERROR] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_4f' (errno: 150)
+  [INFO] [2017-03-27 16:43:07][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:43:07][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:45:33][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:45:33 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:45:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:45:34][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:45:34][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:45:34][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:45:34][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:45:34][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:45:34][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:45:35][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:45:35][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:45:35][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:45:35][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:45:35][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:45:35][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:45:35][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:45:35][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:45:35][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:45:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:45:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_51' (errno: 150)
+  [ERROR] [2017-03-27 16:45:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:45:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_51' (errno: 150)
+  [INFO] [2017-03-27 16:45:36][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:45:36][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-27 16:49:40][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167135c: startup date [Mon Mar 27 16:49:40 CST 2017]; root of context hierarchy
+  [INFO] [2017-03-27 16:49:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-db.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-users.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-manager.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-classify.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-book.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-order.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext-orderitem.xml]
+  [INFO] [2017-03-27 16:49:41][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [datasource.properties]
+  [INFO] [2017-03-27 16:49:41][org.hibernate.annotations.common.Version]Hibernate Commons Annotations 3.2.0.Final
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Environment]Hibernate 3.6.10.Final
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Environment]hibernate.properties not found
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Environment]Bytecode provider name : javassist
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Environment]using JDK 1.4 java.sql.Timestamp handling
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Book.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Classify.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Manager.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\OrderItem.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Orders.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:41][org.hibernate.cfg.Configuration]Reading mappings from file: G:\For Jee\eclipse\Program\netStore\target\classes\com\netStore\pojo\Users.hbm.xml
+  [WARN] [2017-03-27 16:49:41][org.hibernate.util.DTDEntityResolver]recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Book -> book
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Book.orders -> orders_books
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Classify -> classify
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Manager -> manager
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.OrderItem -> orderitem
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Orders -> orders
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping class: com.netStore.pojo.Users -> users
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Classify.book -> book
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Orders.orderitem -> orderitem
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.HbmBinder]Mapping collection: com.netStore.pojo.Users.orders -> orders
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.Configuration]Hibernate Validator not found: ignoring
+  [INFO] [2017-03-27 16:49:42][org.springframework.orm.hibernate3.LocalSessionFactoryBean]Building new Hibernate SessionFactory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.search.HibernateSearchEventListenerRegister]Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  [INFO] [2017-03-27 16:49:42][org.hibernate.connection.ConnectionProviderFactory]Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+  [INFO] [2017-03-27 16:49:42][org.hibernate.dialect.Dialect]Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Database ->
+       name : MySQL
+    version : 5.5.44
+      major : 5
+      minor : 5
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+      major : 5
+      minor : 1
+  [INFO] [2017-03-27 16:49:42][org.hibernate.transaction.TransactionFactoryFactory]Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.transaction.TransactionManagerLookupFactory]No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Automatic flush during beforeCompletion(): disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Automatic session close at end of transaction: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]JDBC batch size: 15
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]JDBC batch updates for versioned data: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Scrollable result sets: enabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]JDBC3 getGeneratedKeys(): enabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Connection release mode: auto
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Maximum outer join fetch depth: 2
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Default batch fetch size: 1
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Generate SQL with comments: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Order SQL updates by primary key: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Order SQL inserts for batching: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.hql.ast.ASTQueryTranslatorFactory]Using ASTQueryTranslatorFactory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Query language substitutions: {}
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]JPA-QL strict compliance: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Second-level cache: enabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Query cache: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Optimize cache for minimal puts: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Structured second-level cache entries: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Echoing all SQL to stdout
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Statistics: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Deleted entity synthetic identifier rollback: disabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Default entity-mode: pojo
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Named query checking : enabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.cfg.SettingsFactory]Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+  [INFO] [2017-03-27 16:49:42][org.hibernate.impl.SessionFactoryImpl]building session factory
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@88eb5b
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1f1a286
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@122d892
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@17c9034
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@5f69f3
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@de186c
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [INFO] [2017-03-27 16:49:42][org.hibernate.type.BasicTypeRegistry]Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@157bcad
+  [WARN] [2017-03-27 16:49:42][org.hibernate.id.UUIDHexGenerator]Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+  [INFO] [2017-03-27 16:49:43][org.hibernate.impl.SessionFactoryObjectFactory]Not binding factory to JNDI, no JNDI name configured
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Running hbm2ddl schema update
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]fetching database metadata
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]updating schema
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.book
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [promotions, filename, author, price, addtime, description, bid, bookname, cid]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk2e3ae9ae64c26f]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk2e3ae9ae64c26f, primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.classify
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [description, cid, classifyname]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.manager
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [birthday, password, mid, managername]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orderitem
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oiid, money, num, oid, bid]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fke8b2ab61d9985f1c]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fke8b2ab61d9985f1c, primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, money, totalnum, oid, totalmoney, status]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fkc3df62e5b4c7024b]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fkc3df62e5b4c7024b, primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.orders_books
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [oid, bid]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: [fk3cf668d0d9985f1c]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [fk3cf668d0d9985f1c, primary]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]table found: netstore.users
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]columns: [uid, password, address, phone, company, email, username]
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]foreign keys: []
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.TableMetadata]indexes: [primary]
+  [ERROR] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orderitem add index FKE8B2AB611651BD93 (bid), add constraint FKE8B2AB611651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_57' (errno: 150)
+  [ERROR] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Unsuccessful: alter table orders_books add index FK3CF668D01651BD93 (bid), add constraint FK3CF668D01651BD93 foreign key (bid) references book (bid)
+  [ERROR] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_57' (errno: 150)
+  [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
+  [INFO] [2017-03-27 16:49:43][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
   

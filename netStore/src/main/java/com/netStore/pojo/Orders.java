@@ -8,9 +8,13 @@ public class Orders implements Serializable{
 
 	private String oid;
 	private String status; //订单状态   0未付款 1已付款 2已发货
-	private float money;
+	private float totalmoney;
+	private String totalnum;
+	// many2one
 	private Users users;
-	private Set<Book> book;
+	// one2many
+	private Set<OrderItem> orderitem;
+	
 	public String getOid() {
 		return oid;
 	}
@@ -23,11 +27,18 @@ public class Orders implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public float getMoney() {
-		return money;
+	
+	public float getTotalmoney() {
+		return totalmoney;
 	}
-	public void setMoney(float money) {
-		this.money = money;
+	public void setTotalmoney(float totalmoney) {
+		this.totalmoney = totalmoney;
+	}
+	public String getTotalnum() {
+		return totalnum;
+	}
+	public void setTotalnum(String totalnum) {
+		this.totalnum = totalnum;
 	}
 	public Users getUsers() {
 		return users;
@@ -35,13 +46,13 @@ public class Orders implements Serializable{
 	public void setUsers(Users users) {
 		this.users = users;
 	}
-	public Set<Book> getBook() {
-		return book;
+	public Set<OrderItem> getOrderitem() {
+		return orderitem;
 	}
-	public void setBook(Set<Book> book) {
-		this.book = book;
+	public void setOrderitem(Set<OrderItem> orderitem) {
+		this.orderitem = orderitem;
 	}
-	
+		
 	
 	
 	

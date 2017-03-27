@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		class用来描述一个类
+		   name 类的全名
+		   table 该持久化类对应的表名   可以不写，默认值为类名
+		   catalog  数据库的名称
+	 -->
+	<class name="com.netStore.pojo.OrderItem" table="orderitem">
+		<!-- 
+			用来描述主键
+			  name 属性的名称
+			  column 属性的名称对应的表的字段   可以不写  默认值就是属性的名称
+			  length  属性的名称对应的表的字段的长度  如果不写，默认是最大的长度
+		 -->
+		<id name="oiid" column="oiid" length="50">
+			<!-- 
+				主键的产生器
+			 -->
+			<generator class="increment"></generator>
+		</id>
+		
+		<property name="num" length="50" type="java.lang.String"></property>		
+		<property name="money" type="float"></property>
+		
+		<many-to-one name="book" class="com.netStore.pojo.Book" column="bid" lazy="false"></many-to-one>
+		<many-to-one name="orders" class="com.netStore.pojo.Orders" column="oid" lazy="false"></many-to-one>
+		<!-- 
+		<set name="book" table="orders_books">
+			<key>
+			  <column name="oid"></column>
+			</key>
+			<many-to-many class="com.netStore.pojo.Book" column="bid"></many-to-many>
+		</set>
+		 -->
+	</class>
+</hibernate-mapping>
