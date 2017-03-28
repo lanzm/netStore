@@ -454,7 +454,7 @@ public class CertUtil {
 				keyAlias = aliasenum.nextElement();
 			}
 			X509Certificate cert = (X509Certificate) keyStore
-					.getCertificate(keyAlias);
+					.getCertificate(keyAlias); 
 			return cert.getSerialNumber().toString();
 		} catch (Exception e) {
 			LogUtil.writeErrorLog("getSignCertId Error", e);

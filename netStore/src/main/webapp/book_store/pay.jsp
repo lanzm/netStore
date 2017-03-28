@@ -29,7 +29,7 @@
             <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
           <!-- <li><a href="details.html">prices</a></li>   -->
-            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
             
@@ -45,43 +45,44 @@
             
             <table id="cart_table" class="cart_table">
             	<tr class="cart_title">
-            		<td>订单号</td>
                 	<td>书籍图片</td>
                 	<td>书籍名称</td>
                     <td>单本价格</td>
                     <td>数量</td>
                     <td>单计</td>
+                    
                 </tr>
-                
-                <c:forEach items="${cart}" var="c">
+               
+                <c:forEach items="${orderr}" var="o">
                 	
 	            	<tr>
-	                	<td><a href="details/${c.value.book.bid}.action"><img src="/image/${c.value.book.filename}" alt="" title="" border="0" class="cart_thumb" /></a></td>
-	                	<td>${c.value.book.bookname}</td>
-	                    <td>${c.value.book.price}￥</td>
-	                    <td>${c.value.totalbook}</td>
-	                    <td>${c.value.money}</td>
+	                	<td><a href="details/${o.book.bid}.action"><img src="/image/${o.book.filename}" alt="" title="" border="0" class="cart_thumb" /></a></td>
+	                	<td>${o.book.bookname}</td>
+	                    <td>${o.book.price}￥</td>
+	                    <td>${o.num}</td>
+	                    <td>${o.money}</td>
 	                </tr>          
                 	
                 </c:forEach>
             
 
                 <tr>
-                <td colspan="4" class="cart_total"><span class="red">商品总数:</span></td>
-                <td id="totalnum"></td>                
+	                <td colspan="4" class="cart_total"><span class="red">商品总数:</span></td>
+	                <td >${orders.totalnum}</td>                
                 </tr>  
                 
                 <tr>
-                <td colspan="4" class="cart_total"><span class="red">总计:</span></td>
-                <td id="totalmoney"></td>                
+	                <td colspan="4" class="cart_total"><span class="red">总计:</span></td>
+	                <td >${orders.totalmoney}</td>                
                 </tr>                  
-            
+            	<tr>
+            		<td>订单号：</td>
+            		<td>${orders.oid}</td>
+            	</tr>
             </table>
-            <a href="category.action" class="continue">&lt; 继续购物</a>
-            <a href="pay.action" class="checkout">结账 &gt;</a>
+            <a href="category.action" class="continue">&lt; 继续购物</a>   
+            <a href="pay_sure.action" class="checkout">确认结账 &gt;</a>
             
-
-             
             
             </div>	
             
@@ -94,7 +95,7 @@
         </div><!--end of left content-->
         
         <div class="right_content">
-        
+        <!--  
                 	<div class="languages_box">
             <span class="red">Languages:</span>
             <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
@@ -107,7 +108,7 @@
                 <a href="#">EUR</a>
                 <a href="#"><strong>USD</strong></a>
                 </div>
-                
+           -->     
                 
              <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
@@ -192,7 +193,6 @@
         
         
        
-       
        <div class="clear"></div>
        </div><!--end of center content-->
        
@@ -208,10 +208,8 @@
        
         </div>
         
-       
        </div>
     
-
 </div>
 
 </body>

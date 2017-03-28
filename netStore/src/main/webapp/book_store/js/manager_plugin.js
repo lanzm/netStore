@@ -17,7 +17,20 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				
-			
+				/**
+				 *  结账 按钮
+				 */
+				$("#pay_check").click(function(){
+					
+					if($.cookie('itemsnum') != null){
+						return true;
+					}
+					// 如果购物车没有东西
+					alert("购物车里面还没有东西，快去购物呦~~");
+					return false;
+				});
+				
+				
 				/**
 				 * 把存在cookie中的购物车信息取出
 				 */

@@ -36,10 +36,10 @@ public class DemoBase {
 	public static String version = "5.0.0";
 	
 	//后台服务对应的写法参照 FrontRcvResponse.java
-	public static String frontUrl = "http://127.0.0.1:8080/ACPSample_B2C/frontRcvResponse";
+	public static String frontUrl = "http://127.0.0.1:8080/netStore/frontRcvResponse";
 
 	//后台服务对应的写法参照 BackRcvResponse.java
-	public static String backUrl = "http://222.222.222.222:8080/ACPSample_B2C/BackRcvResponse";//受理方和发卡方自选填写的域[O]--后台通知地址
+	public static String backUrl = "http://222.222.222.222:8080/netStroe/BackRcvResponse";//受理方和发卡方自选填写的域[O]--后台通知地址
 
 	// 商户发送交易时间 格式:YYYYMMDDhhmmss
 	public static String getCurrentTime() {
@@ -151,7 +151,7 @@ public class DemoBase {
 		return ZmDataList;	
 	}
 
-		
+	// 测试 能否正确加载证书
 	public static void main(String[] args) {
 		System.out.println(AcpService.encryptTrack("12", "utf-8"));
 		SDKConfig.getConfig().loadPropertiesFromSrc();

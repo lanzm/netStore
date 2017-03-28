@@ -85,10 +85,8 @@
             
             </table>
             <a href="category.action" class="continue">&lt; 继续购物</a>
-            <a href="pay.action" class="checkout">结账 &gt;</a>
+            <a id="pay_check" href="pay.action" class="checkout">结账 &gt;</a>
             
-
-             
             
             </div>	
             

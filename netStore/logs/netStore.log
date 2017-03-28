@@ -17654,4 +17654,142 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have a
   [ERROR] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]Can't create table 'netstore.#sql-23bc_57' (errno: 150)
   [INFO] [2017-03-27 16:49:43][org.hibernate.tool.hbm2ddl.SchemaUpdate]schema update complete
   [INFO] [2017-03-27 16:49:43][org.springframework.orm.hibernate3.HibernateTransactionManager]Using DataSource [org.apache.commons.dbcp.BasicDataSource@1390d63] of Hibernate SessionFactory for HibernateTransactionManager
+  [INFO] [2017-03-28 10:18:59][ACP_SDK_LOG]add BC provider
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]================= SYS INFO begin====================
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]os_name:Windows 8.1
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]os_arch:x86
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]os_version:6.3
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java_vm_specification_version:1.8
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java_vm_specification_vendor:Oracle Corporation
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java_vm_specification_name:Java Virtual Machine Specification
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java_vm_version:25.20-b23
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java_vm_name:Java HotSpot(TM) Client VM
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java.version:1.8.0_20
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java.vm.vendor=[Oracle Corporation]
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]java.version=[1.8.0_20]
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]Providers List:
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]1.SUN
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]2.SunRsaSign
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]3.SunEC
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]4.SunJSSE
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]5.SunJCE
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]6.SunJGSS
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]7.SunSASL
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]8.XMLDSig
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]9.SunPCSC
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]10.SunMSCAPI
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]11.BC
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]================= SYS INFO end=====================
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]加载敏感信息加密证书==>null
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]WARN: acpsdk.encryptCert.path is empty
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]加载验证签名证书目录==>null
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]ERROR: acpsdk.validateCert.dir is empty
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [ERROR] [2017-03-28 10:19:00][SDK_ERR_LOG]not an RSA key!
+  java.lang.Exception: not an RSA key!
+	at com.netStore.pay.SecureUtil.encryptedPin(SecureUtil.java:632)
+	at com.netStore.pay.SecureUtil.EncryptData(SecureUtil.java:334)
+	at com.netStore.pay.AcpService.encryptTrack(AcpService.java:502)
+	at com.netStore.pay.DemoBase.main(DemoBase.java:156)
+[INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]从classpath: /G:/For%20Jee/eclipse/Program/netStore/target/classes/ 获取属性文件acp_sdk.properties
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]开始从属性文件中加载配置项
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]单证书模式，使用配置文件配置的私钥签名证书，SingleCertMode:[true]
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]配置项：私钥签名证书路径==>acpsdk.signCert.path==>D:/certs/acp_test_sign.pfx 已加载
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]配置项：私钥签名证书密码==>acpsdk.signCert.pwd 已加载
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]配置项：私钥签名证书类型==>acpsdk.signCert.type==>PKCS12 已加载
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]配置项：敏感信息加密证书==>acpsdk.encryptCert.path==>D:/certs/acp_test_verify_sign.cer 已加载
+  [INFO] [2017-03-28 10:19:00][ACP_SDK_LOG]配置项：验证签名证书路径(这里配置的是目录，不要指定到公钥文件)==>acpsdk.validateCert.dir==>D:/certs/ 已加载
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]add BC provider
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]================= SYS INFO begin====================
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]os_name:Windows 8.1
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]os_arch:x86
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]os_version:6.3
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java_vm_specification_version:1.8
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java_vm_specification_vendor:Oracle Corporation
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java_vm_specification_name:Java Virtual Machine Specification
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java_vm_version:25.20-b23
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java_vm_name:Java HotSpot(TM) Client VM
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java.version:1.8.0_20
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java.vm.vendor=[Oracle Corporation]
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]java.version=[1.8.0_20]
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]Providers List:
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]1.SUN
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]2.SunRsaSign
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]3.SunEC
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]4.SunJSSE
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]5.SunJCE
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]6.SunJGSS
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]7.SunSASL
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]8.XMLDSig
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]9.SunPCSC
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]10.SunMSCAPI
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]11.BC
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]================= SYS INFO end=====================
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]加载敏感信息加密证书==>null
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]WARN: acpsdk.encryptCert.path is empty
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]加载验证签名证书目录==>null
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]ERROR: acpsdk.validateCert.dir is empty
+  [INFO] [2017-03-28 10:19:24][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [ERROR] [2017-03-28 10:19:25][SDK_ERR_LOG]not an RSA key!
+  java.lang.Exception: not an RSA key!
+	at com.netStore.pay.SecureUtil.encryptedPin(SecureUtil.java:632)
+	at com.netStore.pay.SecureUtil.EncryptData(SecureUtil.java:334)
+	at com.netStore.pay.AcpService.encryptTrack(AcpService.java:502)
+	at com.netStore.pay.DemoBase.main(DemoBase.java:156)
+[INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]从classpath: /G:/For%20Jee/eclipse/Program/netStore/target/classes/ 获取属性文件acp_sdk.properties
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]开始从属性文件中加载配置项
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]单证书模式，使用配置文件配置的私钥签名证书，SingleCertMode:[true]
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]配置项：私钥签名证书路径==>acpsdk.signCert.path==>D:/certs/acp_test_sign.pfx 已加载
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]配置项：私钥签名证书密码==>acpsdk.signCert.pwd 已加载
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]配置项：私钥签名证书类型==>acpsdk.signCert.type==>PKCS12 已加载
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]配置项：敏感信息加密证书==>acpsdk.encryptCert.path==>D:/certs/acp_test_verify_sign.cer 已加载
+  [INFO] [2017-03-28 10:19:25][ACP_SDK_LOG]配置项：验证签名证书路径(这里配置的是目录，不要指定到公钥文件)==>acpsdk.validateCert.dir==>D:/certs/ 已加载
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]add BC provider
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]================= SYS INFO begin====================
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]os_name:Windows 8.1
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]os_arch:x86
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]os_version:6.3
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java_vm_specification_version:1.8
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java_vm_specification_vendor:Oracle Corporation
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java_vm_specification_name:Java Virtual Machine Specification
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java_vm_version:25.20-b23
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java_vm_name:Java HotSpot(TM) Client VM
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java.version:1.8.0_20
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java.vm.vendor=[Oracle Corporation]
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]java.version=[1.8.0_20]
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]Providers List:
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]1.SUN
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]2.SunRsaSign
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]3.SunEC
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]4.SunJSSE
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]5.SunJCE
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]6.SunJGSS
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]7.SunSASL
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]8.XMLDSig
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]9.SunPCSC
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]10.SunMSCAPI
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]11.BC
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]================= SYS INFO end=====================
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]加载敏感信息加密证书==>null
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]WARN: acpsdk.encryptCert.path is empty
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]加载验证签名证书目录==>null
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]ERROR: acpsdk.validateCert.dir is empty
+  [INFO] [2017-03-28 10:23:58][ACP_SDK_LOG]WARN: acpsdk.encryptTrackKey.modulus or acpsdk.encryptTrackKey.exponent is empty
+  [ERROR] [2017-03-28 10:23:59][SDK_ERR_LOG]not an RSA key!
+  java.lang.Exception: not an RSA key!
+	at com.netStore.pay.SecureUtil.encryptedPin(SecureUtil.java:632)
+	at com.netStore.pay.SecureUtil.EncryptData(SecureUtil.java:334)
+	at com.netStore.pay.AcpService.encryptTrack(AcpService.java:502)
+	at com.netStore.pay.DemoBase.main(DemoBase.java:156)
+[INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]从classpath: /G:/For%20Jee/eclipse/Program/netStore/target/classes/ 获取属性文件acp_sdk.properties
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]开始从属性文件中加载配置项
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]单证书模式，使用配置文件配置的私钥签名证书，SingleCertMode:[true]
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]配置项：私钥签名证书路径==>acpsdk.signCert.path==>D:/certs/acp_test_sign.pfx 已加载
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]配置项：私钥签名证书密码==>acpsdk.signCert.pwd 已加载
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]配置项：私钥签名证书类型==>acpsdk.signCert.type==>PKCS12 已加载
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]配置项：敏感信息加密证书==>acpsdk.encryptCert.path==>D:/certs/acp_test_verify_sign.cer 已加载
+  [INFO] [2017-03-28 10:23:59][ACP_SDK_LOG]配置项：验证签名证书路径(这里配置的是目录，不要指定到公钥文件)==>acpsdk.validateCert.dir==>D:/certs/ 已加载
   

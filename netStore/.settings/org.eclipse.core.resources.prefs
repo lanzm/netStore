@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/resources/acp_sdk.properties=UTF-8
 encoding//src/main/webapp/book_store/index.jsp=UTF-8
 encoding//src/main/webapp/manager/page/index.jsp=UTF-8
 encoding//src/main/webapp/manager/page/login.jsp=UTF-8

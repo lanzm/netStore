@@ -74,7 +74,9 @@ public class MyAccountAction {
 		//标识符
 		boolean flag = false;
 		// 如果 输入为空时
-		if(username.equals(null) || password.equals(null)){
+		if(username == null || password == null){
+			flag = false;
+		}else if(username == "" || password == ""){
 			flag = false;
 		}else{
 			// 不为空时，遍历查询是否正确
@@ -105,7 +107,7 @@ public class MyAccountAction {
 		// 判断
 		if(flag){
 			model.addAttribute("msg", "");
-			return "../../book_store/cart";
+			return "redirect:/cart.action";
 		}else{
 			model.addAttribute("msg", "用户名或密码错误");
 			return "../../book_store/myaccount";

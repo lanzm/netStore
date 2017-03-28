@@ -1,16 +1,11 @@
 package com.netStore.action.user;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Set;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.hibernate.sql.ordering.antlr.OrderingSpecification.Ordering;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,11 +41,20 @@ public class CartAction {
 	@Autowired
 	public OrderItemService OrderItemService;
 	
+	// 新建购物车
 	Cart cart = new Cart();
 	long bid = 0;
 	
+		
+	
+	/**
+	 * 结账，把订单存入数据库
+	 * @param request把cookie取出
+	 * @param model把购物车信息送到pay界面
+	 * @return返回支付页面
+	 */
 	@RequestMapping("/pay")
-	public String pay(HttpServletRequest request){
+	public String pay(HttpServletRequest request, HttpServletResponse response, Model model){
 		
 		boolean flag = true;
 		String username = null;
@@ -72,7 +76,8 @@ public class CartAction {
 			return "redirect:/myaccount_bf.action";
 		}
 		
-		// 新建订单，开始存订单
+		// 新建订单
+		//开始存订单
 		Orders orders = new Orders();
 		// 查询出现在的用户是谁
 		Users user = UsersService.get_usersByName(username);
@@ -82,20 +87,48 @@ public class CartAction {
 		orders.setTotalnum(String.valueOf(cart.getTotalnum()));
 		orders.setUsers(user);
 		OrderService.save_order(orders);
+		// 把 循环中的信息取出
+		List<OrderItem> orderi = new ArrayList<OrderItem>();
 		// 遍历 购物车 把单个书籍提取出来，并存到数据库中
 		for(Entry<Long, Cartitems> item : cart.getItems().entrySet()){
+			// 新建单项
 			OrderItem orderItem = new OrderItem();
 			orderItem.setBook(item.getValue().getBook());
 			orderItem.setMoney(item.getValue().getMoney());
 			orderItem.setNum(String.valueOf(item.getValue().getTotalbook()));
 			orderItem.setOrders(orders);
+			// 把它放到 全局中
+			orderi.add(orderItem);
 			// 保存单项
 			OrderItemService.save_orderItem(orderItem);
 		}
+		// 把购物车的信息送到 pay界面
+		model.addAttribute("orders", orders);
+		model.addAttribute("orderr", orderi);
+		// 把订单号送到cookie中
+		Cookie cookie = new Cookie("orderid", orders.getOid());
+		cookie.setMaxAge(-1);
+		response.addCookie(cookie);
+
+		// 把分类传到页面
+		List<Classify> classifys = ClassifyService.list_Classify();
+		model.addAttribute("classifies", classifys);
+		// 得到 做促销的书籍
+		List<Book> booksPromotions = BookService.get_BookPromotions();
+		// 随机
+		RandomUtils randomUtils = new RandomUtils();
+		List<Integer> booksp = randomUtils.random(booksPromotions);
+		// 产生的促销书籍放到网页
+		model.addAttribute("bookPromotions1", booksPromotions.get(booksp.get(0)));
+		model.addAttribute("bookPromotions2", booksPromotions.get(booksp.get(1)));
+		model.addAttribute("bookPromotions3", booksPromotions.get(booksp.get(2)));		
 		
-		return "../../book_store/cart";
+		model.addAttribute("cart", cart.getItems());
+		model.addAttribute("totalmoney", cart.getTotalmoney());
+		model.addAttribute("totalnum", cart.getTotalnum());
 		
 		
+		return "../../book_store/pay";
 	}
 	
 	/**
@@ -202,7 +235,7 @@ public class CartAction {
 	/**
 	 *  把值 存入 cookie
 	 * @param response 
-	 * @return
+	 * @return返回书城页面
 	 */
 	@RequestMapping("/cart_js")
 	public String cart_js(HttpServletResponse response){
