@@ -17,6 +17,39 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				
+				$("#menu").delegate('#quit','click',function(){
+					
+					$.cookie('username',null);
+					return true;
+					
+				});
+				
+				
+				/**
+				 * 个人页面 个人信息滑出
+				 */
+				$("#personal").click(function(){
+					
+					$(".usersmsg").slideToggle("slow");
+					return false;
+					
+				});
+				/**
+				 * 个人页面 未支付滑出
+				 */
+				$("#orders").click(function(){
+					
+					$(".orders_table").slideToggle("slow");
+					return false;
+				});
+				/**
+				 * 个人页面 全部订单 滑出
+				 */
+				$("#orderAll").click(function(){
+					$(".orderAll_table").slideToggle("slow");
+					return false;
+				});
+				
 				/**
 				 *  结账 按钮
 				 */
@@ -59,13 +92,16 @@
 					$("#totalmoney").text("0 ￥");
 				}
 				/**
-				 * 取出用户名的cookie
+				 * 取出 用户名的 cookie
 				 */
-				if($.cookie('username') != null){
+				if($.cookie('username') != "null"){
 					// 如果不为空 ， 把标题置为 用户名
 					$("#myaccount").text($.cookie('username'));
 					// 并且链接改为 购物车
-					$("#myaccount").attr("href","cart.action");
+					$("#myaccount").attr("href","personal.action");
+					// 添加退出按钮
+					$("#myaccount").parent().after("<li><a id='quit' href='javascript:void(0)' onclick='location.reload()'>退出</a></li>");
+					
 				}else{
 					// 如果为空则还原
 					$("#myaccount").text("我的账号");
@@ -182,6 +218,19 @@
 						flag = true;
 					}
 					
+				});
+				/**
+				 * 匹配 地址 
+				 */
+				$("#address").blur(function(){
+					if($("#address").val() == ""){
+						$("#addressmsg").attr("color","red");
+						$("#addressmsg").text("寄件地址不能为空");
+						flag = false;
+					}else{
+						$("#addressmsg").text("");
+						flag = true;
+					}
 				});
 				/**
 				 *  注册

@@ -58,5 +58,11 @@ public class OrderServiceImpl implements OrderService{
 		return OrderDao.list();
 	}
 
+	@Override
+	public List<Orders> get_orderByUid(long uid) {
+		
+		return OrderDao.get_OrderByUid(uid);
+	}
+
 
 }

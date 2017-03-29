@@ -36,7 +36,7 @@ public class DemoBase {
 	public static String version = "5.0.0";
 	
 	//后台服务对应的写法参照 FrontRcvResponse.java
-	public static String frontUrl = "http://127.0.0.1:8080/netStore/frontRcvResponse";
+	public static String frontUrl = "http://127.0.0.1:8080/netStore/personal.action";
 
 	//后台服务对应的写法参照 BackRcvResponse.java
 	public static String backUrl = "http://222.222.222.222:8080/netStroe/BackRcvResponse";//受理方和发卡方自选填写的域[O]--后台通知地址

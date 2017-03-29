@@ -76,8 +76,8 @@
                     </div>
                     
                     <div class="form_row">
-	                    <label class="contact"><strong>地址:</strong></label>
-	                    <input name="address" type="text" class="contact_input" placeholder="请输入住址"/>
+	                    <label class="contact"><strong>* 地址:</strong></label><font id="addressmsg"></font>
+	                    <input id="address" name="address" type="text" class="contact_input" placeholder="请输入住址(寄件地址，请认真填写完整)"/>
                     </div>                    
 
                     <div class="form_row">

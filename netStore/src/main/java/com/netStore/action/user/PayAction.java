@@ -6,13 +6,10 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
 import com.netStore.service.OrderService;
@@ -20,6 +17,7 @@ import com.netStore.pay.DemoBase;
 import com.netStore.pay.AcpService;
 import com.netStore.pay.LogUtil;
 import com.netStore.pay.SDKConfig;
+import com.netStore.pojo.Orders;
 
 @Controller
 public class PayAction {
@@ -43,9 +41,10 @@ public class PayAction {
 	 */
 	@RequestMapping("/pay_sure")
 	@ResponseBody
-	public String pay_js(HttpServletRequest req,HttpServletResponse resp) throws IOException{
+	public String pay_sure(HttpServletRequest req,HttpServletResponse resp) throws IOException{
 		// 获取 总金额
 		String totalmoney = "0";
+		// 获取 订单id
 		String orderid = null;
 		Cookie[] cookie = req.getCookies();
 		for (Cookie cookie2 : cookie) {
@@ -110,6 +109,7 @@ public class PayAction {
 		LogUtil.writeLog("打印请求HTML，此为请求报文，为联调排查问题的依据："+html);
 		//将生成的html写到浏览器中完成自动跳转打开银联支付页面；这里调用signData之后，将html写到浏览器跳转到银联页面之前均不能对html中的表单项的名称和值进行修改，如果修改会导致验签不通过
 		//resp.getWriter().write(html);
+
 		// 返回生成的页面
 		return html;
 		

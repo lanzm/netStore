@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>结算</title>
+<title>修改用户信息</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
@@ -19,8 +19,8 @@
 <div id="wrap">
 
        <div class="header">
-       		<div class="logo"><a href="welcome.action"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
-      <div id="menu">
+       		<div class="logo"><a href="index.html"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
+        <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
           <!--    <li><a href="about.html">关于我们</a></li> -->
@@ -39,67 +39,66 @@
        
        <div class="center_content">
        	<div class="left_content">
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>我的购物车</div>
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>注册</div>
         
         	<div class="feat_prod_box_details">
+            <p class="details">
+            	欢迎来到本小店，修改用户时请注意规则
+             </p>
             
-            <table id="cart_table" class="cart_table">
-            	<tr class="cart_title">
-                	<td>书籍图片</td>
-                	<td>书籍名称</td>
-                    <td>单本价格</td>
-                    <td>数量</td>
-                    <td>单计</td>
+              	<div class="contact_form">
+                <div class="form_subtitle">修改账号</div>
+                 <form name="register" action="personal_af.action" method="post">    
+                 	<input name="uid" type="hidden" value="${users.uid}"/>      
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 用户名:</strong></label><font id="name"></font>
+	                    <input id="username" name="username" type="text" class="contact_input" value="${users.username}"/>
+                    </div>  
+
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 密码:</strong></label><font id="passwordmsg"></font>
+	                    <input id="password" name="password" type="text" class="contact_input" placeholder="请输入密码,以字母开头，长度在6-18之间"/>
+                    </div> 
+
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 邮箱:</strong></label><font id="emailmsg"></font>
+	                    <input id="email" name="email" type="text" class="contact_input" value="${users.email}"/>
+                    </div>
+
+
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 手机号码:</strong></label><font id="phonemsg"></font>
+	                    <input id="phone" name="phone" type="text" class="contact_input" value="${users.phone}"/>
+                    </div>
                     
-                </tr>
-               
-                <c:forEach items="${orderr}" var="o">
-                	
-	            	<tr>
-	                	<td><a href="details/${o.book.bid}.action"><img src="/image/${o.book.filename}" alt="" title="" border="0" class="cart_thumb" /></a></td>
-	                	<td>${o.book.bookname}</td>
-	                    <td>${o.book.price}￥</td>
-	                    <td>${o.num}</td>
-	                    <td>${o.money}</td>
-	                </tr>          
-                	
-                </c:forEach>
+                    <div class="form_row">
+	                    <label class="contact"><strong>公司:</strong></label>
+	                    <input name="company" type="text" class="contact_input" value="${users.company}"/>
+                    </div>
+                    
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 地址:</strong></label><font id="addressmsg"></font>
+	                    <input id="address" name="address" type="text" class="contact_input" value="${users.address}"/>
+                    </div>                    
+	
+                    <div class="form_row">
+                        <div class="terms">
+                        <input id="agree" type="checkbox" name="terms" />
+                    		    我同意	 <a href="#">本网站协议</a>  </div>
+                    </div> 
+                    
+                    <div class="form_row">
+                    	<input id="submit" type="submit" class="register" value="修改" />
+                    </div>   
+                  </form>     
+                </div>  
             
-
-                <tr>
-	                <td colspan="4" class="cart_total"><span class="red">商品总数:</span></td>
-	                <td >${orders.totalnum}</td>                
-                </tr>  
-                
-                <tr>
-	                <td colspan="4" class="cart_total"><span class="red">总计:</span></td>
-	                <td >${orders.totalmoney}</td>                
-                </tr>
-                <tr>
-                	<td>地址：</td>
-                	<td>${orders.users.address}</td>
-                </tr>                  
-            	<tr>
-            		<td>订单号：</td>
-            		<td>${orders.oid}</td>
-            	</tr>
-            </table>
-            <a href="category.action" class="continue">&lt; 继续购物</a>   
-            <a href="pay_sure.action" class="checkout">确认结账 &gt;</a>
-            
-            
-            </div>	
-            
-              
-
-            
-
-            
+          </div>	
         <div class="clear"></div>
         </div><!--end of left content-->
         
         <div class="right_content">
-        <!--  
+        <!-- 
                 	<div class="languages_box">
             <span class="red">Languages:</span>
             <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
@@ -112,12 +111,12 @@
                 <a href="#">EUR</a>
                 <a href="#"><strong>USD</strong></a>
                 </div>
-           -->     
+            -->     
                 
              <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
                   <div class="home_cart_content">
-                  <font id="num"></font> x 商品 | <span class="red">总金额: <font id="money"></font>￥</span>
+                   <font id="num"></font> x 商品 | <span class="red">总金额: <font id="money"></font>￥</span>
                   </div>
                   <a href="cart.action" class="view_cart">查看购物车</a>
               
@@ -171,7 +170,7 @@
                 
                 <ul class="list">
                 	<c:forEach items="${classifies}" var="c">
-                		<li><a href="#">${c.classifyname}</a></li>
+                		<li><a href="classify/${c.cid}.action">${c.classifyname}</a></li>
                 	</c:forEach>
                 </ul>
              
@@ -197,6 +196,7 @@
         
         
        
+       
        <div class="clear"></div>
        </div><!--end of center content-->
        
@@ -212,9 +212,10 @@
        
         </div>
         
+       
        </div>
     
-</div>
 
+</div>
 </body>
 </html>

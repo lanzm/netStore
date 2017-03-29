@@ -11,5 +11,7 @@ public interface OrderService {
 	void update_order(Orders order);
 	Orders get_orderById(Serializable id);
 	List<Orders> list_order();
-
+	
+	List<Orders> get_orderByUid(long uid);
+	
 }

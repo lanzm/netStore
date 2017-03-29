@@ -1,8 +1,6 @@
 package com.netStore.action.user;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.netStore.pojo.Book;
 import com.netStore.pojo.Classify;
@@ -18,7 +15,6 @@ import com.netStore.pojo.Users;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
 import com.netStore.service.UsersService;
-import com.netStore.utils.Page;
 import com.netStore.utils.RandomUtils;
 
 @Controller

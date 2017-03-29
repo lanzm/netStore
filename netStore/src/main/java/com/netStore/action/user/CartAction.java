@@ -66,7 +66,12 @@ public class CartAction {
 			for (Cookie cookie : cookies) {
 				if(cookie.getName().equals("username")){
 					username = cookie.getValue();
-					flag = false;
+					//如果用户是空， 则跳转到登陆页面
+					if(username.equals(null) || username.equals("null")){
+						flag = true;
+					}else{
+						flag = false;
+					}
 					break;
 				}
 			}
@@ -174,12 +179,11 @@ public class CartAction {
 		model.addAttribute("bookPromotions1", booksPromotions.get(booksp.get(0)));
 		model.addAttribute("bookPromotions2", booksPromotions.get(booksp.get(1)));
 		model.addAttribute("bookPromotions3", booksPromotions.get(booksp.get(2)));		
-		
+		// 把购物车信息送到网页
 		model.addAttribute("cart", cart.getItems());
 		model.addAttribute("totalmoney", cart.getTotalmoney());
 		model.addAttribute("totalnum", cart.getTotalnum());
-		
-		
+		// 返回购物车页面
 		return "../../book_store/cart";
 	}
 	

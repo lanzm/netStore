@@ -568,3 +568,15 @@ text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hid
 .gw_num .num{display: block;float: left;text-align: center;width: 52px;font-style: normal;font-size: 14px;line-height: 24px;border: 0;}
 .gw_num a.add{float: right;border-right: 0;border-left: 1px solid #dbdbdb;text-decoration: none;}
 .gw_num a.jian{float: left;border-left: 0;border-right: 1px solid #dbdbdb;text-decoration: none;}
+
+/* 个人页面 滑出滑入效果 */
+div.orders_table
+{
+display:none;
+}
+div.orderAll_table
+{
+display:none;
+}
+
+
