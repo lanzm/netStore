@@ -17,13 +17,38 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				
+				
+				/**
+				 * 回复
+				 */
+				$(".list").delegate('#reply','click',function(){
+					
+					$(this).parent().find("form").slideToggle("slow");
+					return false;
+				});
+				/**
+				 * 精彩评论
+				 */
+				$("#comment_many").click(function(){
+					
+				});
+				/**
+				 *  评论输入框
+				 */
+				$("#comment_me").click(function(){
+					$(".comment_input").slideToggle("slow");
+					return false;
+				});
+				
+				/**
+				 *  点击退出， 清空用户名cookie
+				 */
 				$("#menu").delegate('#quit','click',function(){
 					
 					$.cookie('username',null);
 					return true;
 					
 				});
-				
 				
 				/**
 				 * 个人页面 个人信息滑出

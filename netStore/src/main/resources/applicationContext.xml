@@ -16,5 +16,7 @@
   	<import resource="applicationContext-classify.xml"/>
   	<import resource="applicationContext-book.xml"/>
   	<import resource="applicationContext-order.xml"/>
-  		<import resource="applicationContext-orderitem.xml"/>
+  	<import resource="applicationContext-orderitem.xml"/>
+  	<import resource="applicationContext-comment.xml"/>
+  	<import resource="applicationContext-reply.xml"/>
 </beans>

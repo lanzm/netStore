@@ -12,8 +12,12 @@ public class Users implements Serializable{
 	private String phone;
 	private String company;
 	private String address;
-	
+	// one2many
 	private Set<Orders> orders;
+	// one2many
+	private Set<Comment> comment;
+	// one2many
+	private Set<Reply> reply;
 	
 	public long getUid() {
 		return uid;
@@ -62,6 +66,18 @@ public class Users implements Serializable{
 	}
 	public void setOrders(Set<Orders> orders) {
 		this.orders = orders;
+	}
+	public Set<Comment> getComment() {
+		return comment;
+	}
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
+	}
+	public Set<Reply> getReply() {
+		return reply;
+	}
+	public void setReply(Set<Reply> reply) {
+		this.reply = reply;
 	}
 	
 	

@@ -16,9 +16,9 @@ public class Book implements Serializable{
 	private Date addtime;  // 书籍加入时间
 	private boolean promotions; // 书籍是否做促销
 	// many2one
-	private Classify classify;
-	
-	
+	private Classify classify; // 书籍分类
+	//one2many
+	private Set<Comment> comment; // 书籍评论
 	
 	public Classify getClassify() {
 		return classify;
@@ -75,6 +75,14 @@ public class Book implements Serializable{
 	public void setPromotions(boolean promotions) {
 		this.promotions = promotions;
 	}
+	public Set<Comment> getComment() {
+		return comment;
+	}
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
+	}
+	
+	
 
 	
 	

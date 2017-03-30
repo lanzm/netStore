@@ -3,6 +3,7 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,12 +11,12 @@
 <title>书籍详情</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 	<link rel="stylesheet" href="book_store/lightbox.css" type="text/css" media="screen" />
-	
+<!-- 	
 	<script src="book_store/js/prototype.js" type="text/javascript"></script>
 	<script src="book_store/js/scriptaculous.js?load=effects" type="text/javascript"></script>
 	<script src="book_store/js/lightbox.js" type="text/javascript"></script>
     <script type="text/javascript" src="book_store/js/java.js"></script>
-    
+   -->  
     <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 	<script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
 	<script type="text/javascript" src="book_store/js/manager_plugin.js"></script>
@@ -55,14 +56,16 @@
             
             	<div class="prod_img"><a href="details/${book.bid}.action"><img src="/image/${book.filename}" alt="" title="" border="0" /></a>
                 <br /><br />
-                <a href="images/big_pic.jpg" rel="lightbox"><img src="book_store/images/zoom.gif" alt="" title="" border="0" /></a>
+               <!--  <a href="images/big_pic.jpg" rel="lightbox"><img src="book_store/images/zoom.gif" alt="" title="" border="0" /></a>  -->
                 </div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
                     <div class="box_center">
                     <div class="prod_title">书籍简介</div>
-                    <p class="details">${book.description}</p>
+                    <p class="details">
+	                  ${book.description }
+                    </p>
                      <div class="price"><strong>作者:</strong> <span class="red">${book.author}</span></div>
                     <div class="price"><strong>价格:</strong> <span class="red">${book.price} ￥</span></div>
                     <!-- 
@@ -84,13 +87,68 @@
             <div id="demo" class="demolayout">
 
                 <ul id="demo-nav" class="demolayout">
-                <li><a class="active" href="#tab1">More details</a></li>
-                <li><a class="" href="#tab2">Related books</a></li>
+                <li><a id="comment" class="active" href="#tab1">More details</a></li>
+            <!--    <li><a class="" href="#tab2">Related books</a></li>  --> 
                 </ul>
     
             <div class="tabs-container">
             
-                    <div style="display: block;" class="tab" id="tab1">
+                    <div class="tab" id="tab1">
+                    	<br />
+                    	<div class="more_details">
+                    		<div class="">
+                    			<font size="4" color="#7D7D7D">
+		                    	<strong>
+		                    	&nbsp;&nbsp;读友评论
+		                    	</strong>
+                    			</font>
+                    			<font color="#7D7D7D">
+		                    	&nbsp;（已有 <font>${fn:length(comments)}</font> 评论）
+                    			</font>
+                    		</div>
+                    	</div>
+                    	<br />
+                    	<br />
+                    	<div class="more_details">
+                    		<font color="#7D7D7D">
+	                    		&nbsp;&nbsp;<a id="comment_me" href="" style="text-decoration: none;"><font color="#7D7D7D"> 评论书籍 ( ${book.bookname} ) </font> </a>
+                    		</font>
+                    	</div>
+                    	<br />
+                    		<form class="comment_input" action="comment.action" method="post">
+			                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="comments" ></textarea>
+			                    &nbsp;&nbsp;<input type="submit" value="发表评论"/>
+                    		</form>
+                    	<br />
+                    	<div class="more_details">
+                    		<font color="#7D7D7D">
+	                    		&nbsp;&nbsp;<a id="comment_many" href="" style="text-decoration: none;"><font color="#7D7D7D">精彩评论</font> </a>
+                    		</font>
+                    	</div>
+                    	<br />
+                    	
+                    	
+                    	<ul class="list">
+                    		<c:forEach items="${comments}" var="c">
+	                    		<li >
+		                    		<a><font color="#7D7D7D"> ${c.users.username}</font></a> ：${c.content}
+		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${c.time}
+		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href="">点赞 ( ${c.praise} )</a>
+		                    		&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;">回复</a>
+		                    		<form action="reply.action" method="post" style="display: none;">
+		                    			<br />
+		                    			<input type="hidden" name="cid" value="${c.cid}"/>
+		                    			<input type="hidden" name="uid" value="${c.users.uid}"/>
+					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${c.users.username}"></textarea>
+					                    &nbsp;&nbsp;<input type="submit" value="回复"/>
+		                    		</form>
+		                    		<br />
+		                    		<div class="box_bottom"></div>
+	                    		</li>
+                    		</c:forEach>
+                    	</ul>
+                    	
+                    	<!-- 
                                         <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                                         </p>
                             <ul class="list">
@@ -100,7 +158,8 @@
                             <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>                                          
                             </ul>
                                          <p class="more_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                                        </p>                           
+                                        </p>   
+                          -->                        
                     </div>	
                     
                             <div style="display: none;" class="tab" id="tab2">
@@ -282,6 +341,7 @@
 
 </div>
 </body>
+<!-- 
 <script type="text/javascript">
 
 var tabber1 = new Yetii({
@@ -289,4 +349,5 @@ id: 'demo'
 });
 
 </script>
+ -->
 </html>

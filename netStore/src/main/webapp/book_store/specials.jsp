@@ -57,7 +57,6 @@
 		                    <a href="details/${p.bid}.action" class="more">- 详情 -</a>
 		                    <div class="clear"></div>
 	                    </div>
-	                    
 	                    <div class="box_bottom"></div>
 	                </div>    
 	            <div class="clear"></div>

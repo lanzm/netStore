@@ -3,20 +3,21 @@
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
            http://www.springframework.org/schema/aop 
            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
            http://www.springframework.org/schema/tx 
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
            
-           
-  	<import resource="applicationContext-db.xml"/>
-  	<import resource="applicationContext-users.xml"/>
-   	<import resource="applicationContext-manager.xml"/>
-  	<import resource="applicationContext-classify.xml"/>
-  	<import resource="applicationContext-book.xml"/>
-  	<import resource="applicationContext-order.xml"/>
-  	<import resource="applicationContext-orderitem.xml"/>
-  	<import resource="applicationContext-comment.xml"/>
-  	<import resource="applicationContext-reply.xml"/>
+     <bean id="ReplyDao" class="com.netStore.dao.impl.ReplyDaoImpl">
+     	<property name="hibernateTemplate">
+  			<ref bean="hibernateTemplate"/>
+  		</property>
+     </bean>
+     <bean id="ReplyService" class="com.netStore.service.impl.ReplyServiceImpl">
+    		<property name="ReplyDao">
+  			<ref bean="ReplyDao"/>    
+  		</property>   
+     </bean>
+   
 </beans>
