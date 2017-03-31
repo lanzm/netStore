@@ -578,5 +578,43 @@ div.orderAll_table
 {
 display:none;
 }
-
-
+/* 精彩评论 */
+ul.list1{
+clear:both;
+padding:10px 0 0 20px;
+margin:0px;
+}
+ul.list1 li{
+list-style:none;
+padding:2px 0 2px 0;
+}
+ul.list1 li a{
+list-style:none;
+text-decoration:none;
+color:#000000;
+background:url(images/left_menu_bullet.gif) no-repeat left;
+padding:0 0 0 17px;
+}
+ul.list1 li a:hover{
+text-decoration:underline;
+}
+/* 全部评论 */
+ul.list2{
+clear:both;
+padding:10px 0 0 20px;
+margin:0px;
+}
+ul.list2 li{
+list-style:none;
+padding:2px 0 2px 0;
+}
+ul.list2 li a{
+list-style:none;
+text-decoration:none;
+color:#000000;
+background:url(images/left_menu_bullet.gif) no-repeat left;
+padding:0 0 0 17px;
+}
+ul.list2 li a:hover{
+text-decoration:underline;
+}

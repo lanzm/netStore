@@ -6,9 +6,11 @@ import java.util.Date;
 public class Reply implements Serializable{
 
 	private long rid; // 主键
-	private String r_content; // 恢复内容
+	private String r_content; // 回复内容
 	private int r_praise;  // 回复的赞
 	private Date r_time; // 回复时间
+	// many2one
+	private Book book; // 对应书籍
 	// many2one
 	private Users users; // 评论者
 	// many2one
@@ -49,6 +51,12 @@ public class Reply implements Serializable{
 	}
 	public void setR_time(Date r_time) {
 		this.r_time = r_time;
+	}
+	public Book getBook() {
+		return book;
+	}
+	public void setBook(Book book) {
+		this.book = book;
 	}
 	
 	

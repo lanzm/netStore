@@ -16,24 +16,70 @@
 				//把客户端传递过来的参数覆盖掉默认的配置  true为深度迭代
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
-				
-				
 				/**
-				 * 回复
+				 * 全部评论下 点击 回复按钮 的滑入滑出效果
 				 */
-				$(".list").delegate('#reply','click',function(){
+				$(".list2").delegate('#replyall','click',function(){
 					
 					$(this).parent().find("form").slideToggle("slow");
 					return false;
 				});
 				/**
-				 * 精彩评论
+				 * 点击全部评论滑入滑出效果
 				 */
-				$("#comment_many").click(function(){
+				$("#comment_all").click(function(){
+					
+					$(".list2").slideToggle("slow");
+					return false;
 					
 				});
 				/**
-				 *  评论输入框
+				 * 精彩评论的点赞，异步不刷新
+				 */
+				$(".list1").delegate('a', 'click',function(){
+					
+					if($(this).html() == "点赞"){
+						var num = parseInt($(this).next().html());
+						$(this).next().html(num+1);
+						$.post("praise.action",{
+							cid:$(this).next().attr("id"),
+							praise:$(this).next().html()
+						},function(){
+							
+						});
+						return false;
+					}
+					
+					
+				});
+				
+				/**
+				 *  精彩评论中，回复点击时判断用户是否已经登陆
+				 */
+				$(".list1").delegate('#comment_sub', 'click', function(){
+					if($.cookie('username') == "null"){
+						alert("请登录账号后评论");
+						return false;
+					}
+					
+				});
+				/**
+				 * 回复的滑入滑出效果
+				 */
+				$(".list1").delegate('#reply','click',function(){
+					
+					$(this).parent().find("form").slideToggle("slow");
+					return false;
+				});
+				/**
+				 * 精彩评论的滑入滑出效果
+				 */
+				$("#comment_many").click(function(){
+					$(".list1").slideToggle("slow");
+					return false;
+				});
+				/**
+				 *  评论输入框的滑入滑出效果
 				 */
 				$("#comment_me").click(function(){
 					$(".comment_input").slideToggle("slow");

@@ -52,6 +52,18 @@ public class ReplyServiceImpl implements ReplyService{
 		
 		return this.ReplyDao.list();
 	}
+
+	@Override
+	public List<Reply> get_ReplyByCid(long cid) {
+		
+		return this.ReplyDao.get_ReplyByCid(cid);
+	}
+
+	@Override
+	public List<Reply> get_ReplyByBid(long bid) {
+		
+		return this.ReplyDao.get_ReplyByBid(bid);
+	}
 	
 	
 

@@ -103,7 +103,7 @@
 		                    	</strong>
                     			</font>
                     			<font color="#7D7D7D">
-		                    	&nbsp;（已有 <font>${fn:length(comments)}</font> 评论）
+		                    	&nbsp;（已有 <font>${fn:length(comments) + fn:length(replys)}</font> 评论）
                     			</font>
                     		</div>
                     	</div>
@@ -119,6 +119,8 @@
 			                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="comments" ></textarea>
 			                    &nbsp;&nbsp;<input type="submit" value="发表评论"/>
                     		</form>
+                    	
+                    	<!--  精彩评论  -->
                     	<br />
                     	<div class="more_details">
                     		<font color="#7D7D7D">
@@ -126,24 +128,59 @@
                     		</font>
                     	</div>
                     	<br />
-                    	
-                    	
-                    	<ul class="list">
+                    	<ul class="list1">
                     		<c:forEach items="${comments}" var="c">
 	                    		<li >
 		                    		<a><font color="#7D7D7D"> ${c.users.username}</font></a> ：${c.content}
 		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${c.time}
-		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href="">点赞 ( ${c.praise} )</a>
+		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href="">点赞</a> ( <font id="${c.cid}">${c.praise}</font> )
 		                    		&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;">回复</a>
 		                    		<form action="reply.action" method="post" style="display: none;">
 		                    			<br />
 		                    			<input type="hidden" name="cid" value="${c.cid}"/>
 		                    			<input type="hidden" name="uid" value="${c.users.uid}"/>
 					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${c.users.username}"></textarea>
+					                    &nbsp;&nbsp;<input id="comment_sub" type="submit" value="回复"/>
+		                    		</form>
+		                    		<br />
+		                    		<div class="box_bottom"></div>
+	                    		</li>
+                    		</c:forEach>
+                    	</ul>
+                    	
+                    	<!--  全部评论  -->
+                    	<br />
+                    	<div class="more_details">
+                    		<font color="#7D7D7D">
+	                    		&nbsp;&nbsp;<a id="comment_all" href="" style="text-decoration: none;"><font color="#7D7D7D">全部评论</font> </a>
+                    		</font>
+                    	</div>
+                    	<br />
+                    	<ul class="list2">
+                    		
+                    		<c:forEach items="${sort_time}" var="s">
+	                    		<li >
+		                    		<a><font color="#7D7D7D"> ${s.users.username}</font></a> ：<font><strong>${s.content}</strong></font> 
+		                    			<br />
+		                    			<c:if test="${s.type == '1'}">
+			                    			<ul>
+			                    				<li><font color="#7D7D7D">回复</font><a><font color="#7D7D7D">@${s.comment.users.username}</font></a><font color="#7D7D7D">：${s.comment.content}</font></li>
+			                    			</ul>
+		                    			</c:if>
+		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7D7D7D">${s.time}</font>
+		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#7D7D7D">点赞</font></a> <font color="#7D7D7D">( ${s.praise} )</font>
+		                    		&nbsp;&nbsp;<a id="replyall" href="" style="text-decoration: none;"><font color="#7D7D7D">回复</font></a>
+		                    		<form action="reply.action" method="post" style="display: none;">
+		                    			<br />
+		                    			<input type="hidden" name="cid" value="${s.sid}"/>
+		                    			<input type="hidden" name="uid" value="${s.users.uid}"/>
+		                    			<input type="hidden" name="type" value="${s.type}"/>
+					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${s.users.username}"></textarea>
 					                    &nbsp;&nbsp;<input type="submit" value="回复"/>
 		                    		</form>
 		                    		<br />
 		                    		<div class="box_bottom"></div>
+		                    		<br />
 	                    		</li>
                     		</c:forEach>
                     	</ul>

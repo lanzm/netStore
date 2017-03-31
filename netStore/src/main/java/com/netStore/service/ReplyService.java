@@ -12,5 +12,17 @@ public interface ReplyService {
 	Reply get_ReplyById(Serializable id);
 	List<Reply> list_Reply();
 	
+	/**
+	 * 通过cid查询回复评论集合
+	 * @param cid
+	 * @return返回回复评论集合
+	 */
+	List<Reply> get_ReplyByCid(long cid);
 
+	/**
+	 * 通过bid查询回复评论集合
+	 * @param bid
+	 * @return返回回复评论集合
+	 */
+	List<Reply> get_ReplyByBid(long bid);
 }

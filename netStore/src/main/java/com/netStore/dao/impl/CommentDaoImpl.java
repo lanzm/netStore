@@ -13,8 +13,8 @@ public class CommentDaoImpl extends BaseDaoImpl<Comment> implements CommentDao<C
 
 	@Override
 	public List<Comment> get_commentByBid(long bid) {
-		
-		return (List<Comment>) this.getHibernateTemplate().find(" from Comment where bid = " + bid + " ");
+		// 按时间降序排列
+		return (List<Comment>) this.getHibernateTemplate().find(" from Comment where bid = " + bid + " order by time desc ");
 		
 	}
 
