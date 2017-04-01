@@ -9,14 +9,14 @@
            http://www.springframework.org/schema/tx 
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
            
-     <bean id="ReplyDao" class="com.netStore.dao.impl.ReplyDaoImpl">
+     <bean id="Parent_ChildrenDao" class="com.netStore.dao.impl.Parent_ChildrenDaoImpl">
      	<property name="hibernateTemplate">
   			<ref bean="hibernateTemplate"/>
   		</property>
      </bean>
-     <bean id="ReplyService" class="com.netStore.service.impl.ReplyServiceImpl">
-    		<property name="ReplyDao">
-  			<ref bean="ReplyDao"/>    
+     <bean id="Parent_ChildrenService" class="com.netStore.service.impl.Parent_ChildrenServiceImpl">
+    		<property name="Parent_ChildrenDao">
+  			<ref bean="Parent_ChildrenDao"/>    
   		</property>   
      </bean>
    

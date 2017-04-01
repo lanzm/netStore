@@ -3,17 +3,9 @@ package com.netStore.action.user;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.netStore.pojo.Book;
 import com.netStore.pojo.Classify;
 import com.netStore.pojo.Comment;
-import com.netStore.pojo.Reply;
+import com.netStore.pojo.Parent_Children;
 import com.netStore.pojo.Sort_cr;
 import com.netStore.service.BookService;
 import com.netStore.service.ClassifyService;
 import com.netStore.service.CommentService;
 import com.netStore.service.OrderService;
-import com.netStore.service.ReplyService;
+import com.netStore.service.Parent_ChildrenService;
 import com.netStore.service.UsersService;
 import com.netStore.utils.Cart;
 import com.netStore.utils.RandomUtils;
@@ -55,20 +47,27 @@ public class DetailsAction {
 	public CommentService CommentService;
 	//自动注入
 	@Autowired
-	public ReplyService ReplyService;
+	public Parent_ChildrenService Parent_ChildrenService;
 	
 	// 新建购物车
 	Cart cart = new Cart();
 	// 把书籍id放到全局
 	long bid = 0;
 	
-	
+	/**
+	 * 点赞
+	 * @param cid
+	 * @param praise
+	 * @return
+	 */
 	@RequestMapping("/praise")
 	public String praise(String cid, String praise){
 		
 		long id = Long.valueOf(cid);
 		int pra = Integer.valueOf(praise);
-		
+		Comment comment = CommentService.get_CommentById(cid);
+		comment.setPraise(pra);
+		CommentService.save_Comment(comment);
 		
 		return "redirect:/details/" + bid + ".action";
 	}
@@ -81,25 +80,28 @@ public class DetailsAction {
 	 * @return返回详情页
 	 */
 	@RequestMapping("/reply")
-	public String reply(String cid, String uid, String reply, String type){
+	public String reply(String sid, String uid, String reply){
 		// 把id转为 long类型
-		long ccid = Long.valueOf(cid);
+		long ssid = Long.valueOf(sid);
 		long uuid = Long.valueOf(uid);
-		if(type == "0"){
-			
-		}
+		// 新建评论，
+		Comment comment = new Comment();
+		comment.setBook(BookService.get_BookById(bid));
+		comment.setContent(reply);
+		comment.setPraise(0);
+		comment.setTime(new Date());
+		// 评论类型是 回复
+		comment.setType(1);
+		comment.setUsers(UsersService.get_usersById(uuid));
+		// 把评论放入数据库中
+		CommentService.save_Comment(comment);
+		// 和 父类评论建立关联
+		Parent_Children parent_Children = new Parent_Children();
+		parent_Children.setParent_cid(ssid);
+		parent_Children.setChildren_cid(comment.getCid());
 		
-		Reply reply1 = new Reply();
-		reply1.setComment(CommentService.get_CommentById(ccid));
-		reply1.setR_content(reply);
-		reply1.setR_praise(0);
-		reply1.setR_time(new Date());
-		reply1.setUsers(UsersService.get_usersById(uuid));
-		reply1.setBook(BookService.get_BookById(bid));
-		Set<Reply> replyset = new HashSet<Reply>();
-		replyset.add(reply1);
+		Parent_ChildrenService.save_Parent_Children(parent_Children);		
 		
-		ReplyService.save_Reply(reply1);
 		
 		return "redirect:/details/" + bid + ".action";
 	}
@@ -128,6 +130,7 @@ public class DetailsAction {
 		comment.setUsers(UsersService.get_usersByName(username));
 		comment.setBook(BookService.get_BookById(this.bid));
 		comment.setTime(new Date());
+		comment.setType(0);
 		// 保存评论
 		CommentService.save_Comment(comment);
 		
@@ -176,63 +179,56 @@ public class DetailsAction {
 		
 		
 		
-		
 		// 把评论送到页面
 		// 查出书籍有关的评论
 		List<Comment> comments = CommentService.get_CommentByBid(bid);
-		model.addAttribute("comments", comments);
-		// 把回复送到页面,查出书籍有关的回复
-		List<Reply> replys = ReplyService.get_ReplyByBid(bid);
-		model.addAttribute("replys", replys);
-		
-		// 新建一个数组，用来存放 查询出来的 评论和回复
-		List<Sort_cr> sort_time = new ArrayList<Sort_cr>();
-		List<Sort_cr> sort_pra = new ArrayList<Sort_cr>();
-		// 放入 评论
+		//model.addAttribute("comments", comments);
+		// 这个集合的作用是把数据都封装到里面，以便网页的查询
+		List<Sort_cr> lists = new ArrayList<Sort_cr>();
 		for (Comment comment : comments) {
-			
-			Sort_cr sort_cr = new Sort_cr();
-			sort_cr.setSid(comment.getCid());
-			sort_cr.setBook(comment.getBook());
-			sort_cr.setContent(comment.getContent());
-			sort_cr.setPraise(comment.getPraise());
-			sort_cr.setReply(comment.getReply());
-			sort_cr.setUsers(comment.getUsers());
-			sort_cr.setType("0");
-			sort_cr.setTime(comment.getTime());
-			
-			sort_time.add(sort_cr);
-			sort_pra.add(sort_cr);
-		}
-		// 放入 回复
-		for (Reply reply : replys) {
-			
-			Sort_cr sor = new Sort_cr();
-			sor.setBook(reply.getBook());
-			sor.setSid(reply.getRid());
-			sor.setContent(reply.getR_content());
-			sor.setTime(reply.getR_time());
-			sor.setType("1");
-			sor.setPraise(reply.getR_praise());
-			sor.setComment(reply.getComment());
-			sor.setUsers(reply.getUsers());
-			
-			sort_time.add(sor);
-			sort_pra.add(sor);
-		}
-		// 按赞降序来排序
-		Collections.sort(sort_pra, new Comparator<Sort_cr>() {
-
-			@Override
-			public int compare(Sort_cr o1, Sort_cr o2) {
-				
-				return o1.getPraise() - o2.getPraise();
-				
+			// 当评论是 回复时
+			if(comment.getType() == 1){
+				// 根据自己的 id 查出所有的 父类
+				List<Parent_Children> pclists = Parent_ChildrenService.get_Parent_ChildrenByChildrenId(comment.getCid());
+				// 先把自己 放到 sort中
+				// 新建一个 排序集合
+				Sort_cr soc = new Sort_cr();
+				soc.setSid(comment.getCid());
+				soc.setBook(comment.getBook());
+				soc.setContent(comment.getContent());
+				soc.setPraise(comment.getPraise());
+				soc.setTime(comment.getTime());
+				soc.setUsers(comment.getUsers());
+				soc.setType(comment.getType());
+				// 新建一个数组用来放 父子评论查询出来的 评论
+				List<Comment> reply = new ArrayList<>();
+				// 遍历父子评论取出所以关联数据
+				for (Parent_Children parent_Children : pclists) {
+					// pc数据库中 存的 pcid就是 comment的id
+					reply.add(CommentService.get_CommentById(parent_Children.getParent_cid()));
+				}
+				// 把集合放到 soc中
+				soc.setReply(reply);
+				// 最后把所有数据放到 总集合中，以便网页查出来
+				lists.add(soc);
+			}
+			if(comment.getType() == 0){
+				// 新建一个 排序集合
+				Sort_cr soc = new Sort_cr();
+				soc.setSid(comment.getCid());
+				soc.setBook(comment.getBook());
+				soc.setContent(comment.getContent());
+				soc.setPraise(comment.getPraise());
+				soc.setTime(comment.getTime());
+				soc.setUsers(comment.getUsers());
+				soc.setType(comment.getType());
+				// 如果为主评论的话，则没有回复，所以直接加入总集合中
+				lists.add(soc);
 			}
 			
-		});
-		// 按时间降序排列
-		Collections.sort(sort_time, new Comparator<Sort_cr>() {
+		}
+		// 根据时间降序排序
+		Collections.sort(lists,new Comparator<Sort_cr>() {
 
 			@Override
 			public int compare(Sort_cr o1, Sort_cr o2) {
@@ -243,9 +239,8 @@ public class DetailsAction {
 				}
 			}
 		});
-		// 把排序好的 数组送到页面
-		model.addAttribute("sort_time", sort_time);
-		
+		// 把 时间排序送到网页
+		model.addAttribute("lists_time", lists);
 		
 		
 		return "../../book_store/details";

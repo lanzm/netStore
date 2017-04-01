@@ -19,8 +19,7 @@ public class Book implements Serializable{
 	private Classify classify; // 书籍分类
 	//one2many
 	private Set<Comment> comment; // 书籍评论
-	// one2many
-	private Set<Reply> reply; // 书籍回复
+
 	
 	public Classify getClassify() {
 		return classify;
@@ -83,12 +82,7 @@ public class Book implements Serializable{
 	public void setComment(Set<Comment> comment) {
 		this.comment = comment;
 	}
-	public Set<Reply> getReply() {
-		return reply;
-	}
-	public void setReply(Set<Reply> reply) {
-		this.reply = reply;
-	}
+
 	
 	
 

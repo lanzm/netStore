@@ -7,6 +7,7 @@ import java.util.Set;
 public class Comment implements Serializable{
 
 	private long cid; // 主键
+	private int type;  // 评论类型   评论为 0  回复为 1
 	private String content; // 评论内容
 	private Date time; // 评论时间
 	private int praise;  // 评论的赞
@@ -14,8 +15,7 @@ public class Comment implements Serializable{
 	private Users users; // 评论者
 	// many2one
 	private Book book; // 对应书籍
-	// one2many
-	private Set<Reply> reply; // 评论的回复
+
 	
 	public long getCid() {
 		return cid;
@@ -24,6 +24,12 @@ public class Comment implements Serializable{
 		this.cid = cid;
 	}
 	
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
 	public String getContent() {
 		return content;
 	}
@@ -54,13 +60,7 @@ public class Comment implements Serializable{
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public Set<Reply> getReply() {
-		return reply;
-	}
-	public void setReply(Set<Reply> reply) {
-		this.reply = reply;
-	}
-	
+
 	
 	
 }

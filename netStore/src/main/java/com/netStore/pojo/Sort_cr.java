@@ -2,6 +2,7 @@ package com.netStore.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,9 +18,8 @@ public class Sort_cr implements Serializable{
 	private int praise;  // 评论的赞
 	private Users users; // 评论者
 	private Book book; // 对应书籍
-	private Comment comment; // 
-	private Set<Reply> reply; // 评论的回复
-	private String type; // 评论 为0， 回复 为1
+	private List<Comment> reply; // 
+	private int type; // 评论 为0， 回复 为1
 	public long getSid() {
 		return sid;
 	}
@@ -56,24 +56,19 @@ public class Sort_cr implements Serializable{
 	public void setBook(Book book) {
 		this.book = book;
 	}
-	public Comment getComment() {
-		return comment;
-	}
-	public void setComment(Comment comment) {
-		this.comment = comment;
-	}
-	public Set<Reply> getReply() {
+	public List<Comment> getReply() {
 		return reply;
 	}
-	public void setReply(Set<Reply> reply) {
+	public void setReply(List<Comment> reply) {
 		this.reply = reply;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
+	
 	
 	
 	

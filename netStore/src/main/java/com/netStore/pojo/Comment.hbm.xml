@@ -23,16 +23,12 @@
 		</id>
 		
 		<property name="content" length="500" type="java.lang.String"></property>
+		<property name="type" length="50" type="int"></property>
 		<property name="praise" type="int"></property>
 		<property name="time" type="date"></property>
 		<many-to-one name="users" class="com.netStore.pojo.Users" column="uid" lazy="false"></many-to-one>
 		<many-to-one name="book" class="com.netStore.pojo.Book" column="bid" lazy="false"></many-to-one>
-		<set name="reply" lazy="false">
-			<key>
-				<column name="cid"></column>
-			</key>
-			<one-to-many class="com.netStore.pojo.Reply"/>
-		</set>
+	
 		<!-- 
 		<set name="book" table="orders_books">
 			<key>

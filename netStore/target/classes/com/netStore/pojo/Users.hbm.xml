@@ -28,12 +28,7 @@
 		<property name="phone" length="20" type="java.lang.String"></property>
 		<property name="company" length="50" type="java.lang.String"></property>
 		<property name="address" length="50" type="java.lang.String"></property>
-		<set name="reply" lazy="false">
-			<key>
-				<column name="uid"></column>
-			</key>
-			<one-to-many class="com.netStore.pojo.Reply"/>
-		</set>
+		
 		<set name="comment" lazy="false">
 			<key>
 				<column name="uid"></column>

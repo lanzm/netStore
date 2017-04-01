@@ -18,5 +18,5 @@
   	<import resource="applicationContext-order.xml"/>
   	<import resource="applicationContext-orderitem.xml"/>
   	<import resource="applicationContext-comment.xml"/>
-  	<import resource="applicationContext-reply.xml"/>
+  	<import resource="applicationContext-parent_Children.xml"/>
 </beans>

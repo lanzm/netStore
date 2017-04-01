@@ -16,6 +16,26 @@
 				//把客户端传递过来的参数覆盖掉默认的配置  true为深度迭代
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
+				
+				/**
+				 * 全部评论的点赞，异步不刷新
+				 */
+				$(".list2").delegate('font', 'click',function(){
+					
+					if($(this).html() == "点赞"){
+						var num = parseInt($(this).parent().next().html());
+						$(this).parent().next().html(num+1);
+						$.post("praise.action",{
+							cid:$(this).parent().next().attr("id"),
+							praise:$(this).parent().next().html()
+						},function(){
+							
+						});
+						return false;
+					}
+					
+					
+				});
 				/**
 				 * 全部评论下 点击 回复按钮 的滑入滑出效果
 				 */

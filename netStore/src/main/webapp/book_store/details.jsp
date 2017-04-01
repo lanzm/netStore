@@ -103,7 +103,7 @@
 		                    	</strong>
                     			</font>
                     			<font color="#7D7D7D">
-		                    	&nbsp;（已有 <font>${fn:length(comments) + fn:length(replys)}</font> 评论）
+		                    	&nbsp;（已有 <font>${fn:length(lists_time)}</font> 评论）
                     			</font>
                     		</div>
                     	</div>
@@ -158,23 +158,29 @@
                     	<br />
                     	<ul class="list2">
                     		
-                    		<c:forEach items="${sort_time}" var="s">
+                    		<c:forEach items="${lists_time}" var="s">
 	                    		<li >
+		                    		<c:if test="${s.type == 1}">
 		                    		<a><font color="#7D7D7D"> ${s.users.username}</font></a> ：<font><strong>${s.content}</strong></font> 
 		                    			<br />
-		                    			<c:if test="${s.type == '1'}">
-			                    			<ul>
-			                    				<li><font color="#7D7D7D">回复</font><a><font color="#7D7D7D">@${s.comment.users.username}</font></a><font color="#7D7D7D">：${s.comment.content}</font></li>
-			                    			</ul>
+		                    				<ul>
+		                    					<li>
+		                    						<c:forEach items="${s.reply}" var="r">
+		                    							<a>${r.users.username}</a>：<font><strong>${r.content}</strong></font>
+		                    						</c:forEach>
+		                    					</li>
+		                    				</ul>
+		                    			</c:if>
+		                    			<c:if test="${s.type == 0}">
+		                    				<a><font color="#7D7D7D"> ${s.users.username}</font></a> ：<font><strong>${s.content}</strong></font> 
 		                    			</c:if>
 		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7D7D7D">${s.time}</font>
-		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#7D7D7D">点赞</font></a> <font color="#7D7D7D">( ${s.praise} )</font>
-		                    		&nbsp;&nbsp;<a id="replyall" href="" style="text-decoration: none;"><font color="#7D7D7D">回复</font></a>
+		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#7D7D7D">点赞</font></a> ( <font id="${s.sid}" color="#7D7D7D">${s.praise}</font> )
+		                    		&nbsp;&nbsp;<a id="replyall" href="" style="text-decoration: none;"><font  color="#7D7D7D">回复</font></a>
 		                    		<form action="reply.action" method="post" style="display: none;">
 		                    			<br />
-		                    			<input type="hidden" name="cid" value="${s.sid}"/>
+		                    			<input type="hidden" name="sid" value="${s.sid}"/>
 		                    			<input type="hidden" name="uid" value="${s.users.uid}"/>
-		                    			<input type="hidden" name="type" value="${s.type}"/>
 					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${s.users.username}"></textarea>
 					                    &nbsp;&nbsp;<input type="submit" value="回复"/>
 		                    		</form>

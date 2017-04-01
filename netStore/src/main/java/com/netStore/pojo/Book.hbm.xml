@@ -30,12 +30,7 @@
 		<property name="addtime" type="date"></property>
 		<property name="promotions" type="boolean"></property>
 		<many-to-one name="classify" class="com.netStore.pojo.Classify" column="cid" lazy="false"></many-to-one>
-		<set name="reply">
-			<key>
-				<column name="bid"></column>
-			</key>
-			<one-to-many class="com.netStore.pojo.Reply" />
-		</set>
+	
 		<set name="comment">
 			<key>
 				<column name="bid"></column>
