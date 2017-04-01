@@ -60,8 +60,12 @@
 				/**
 				 *  全部评论中，回复点击时判断用户是否已经登陆
 				 */
-				$(".list1").delegate('#huifu', 'click', function(){
-					if($.cookie('username') == "null"){
+				$(".list2").delegate('#huifu', 'click', function(){
+					if($(this).prev().prev().val() == "" || $(this).prev().prev().val() == null){
+						alert("说点什么吧！就没啥可说的？");
+						return false;
+					}
+					if($.cookie('username') == "null" || typeof($.cookie('username')) == "undefined"){
 						alert("请登录账号后评论");
 						return false;
 					}
@@ -75,6 +79,18 @@
 					$(".list2").slideToggle("slow");
 					return false;
 					
+				});
+				/**
+				 * 精彩评论里面 限制字数
+				 */
+				$(".list1").delegate('textarea', 'keyup',function(){
+					var length = $(this).val().length;
+					
+					if(length > 50){
+						$(this).val($(this).val().substring(0, 50));
+						length = 50;
+					}
+					$(this).parent().find("#zishu").html(50 - length);
 				});
 				/**
 				 * 精彩评论的点赞，异步不刷新
@@ -100,7 +116,11 @@
 				 *  精彩评论中，回复点击时判断用户是否已经登陆
 				 */
 				$(".list1").delegate('#comment_sub', 'click', function(){
-					if($.cookie('username') == "null"){
+					if($(this).prev().prev().val() == "" || $(this).prev().prev().val() == null){
+						alert("说点什么吧！就没啥可说的？");
+						return false;
+					}
+					if($.cookie('username') == "null" || typeof($.cookie('username')) == "undefined"){
 						alert("请登录账号后评论");
 						return false;
 					}
@@ -122,7 +142,33 @@
 					return false;
 				});
 				/**
-				 *  评论输入框的滑入滑出效果
+				 * 主评论中， 限制字数
+				 */
+				$("#textarea").keyup(function(){
+					var length = $(this).val().length;
+					
+					if(length > 50){
+						$(this).val($(this).val().substring(0, 50));
+						length = 50;
+					}
+					$(this).parent().find("#zishu").html(50 - length);
+				});
+				/**
+				 *  主评论中，评论点击时判断用户是否已经登陆
+				 */
+				$("#commm").click(function(){
+					if($(this).prev().prev().val() == "" || $(this).prev().prev().val() == null){
+						alert("说点什么吧！就没啥可说的？");
+						return false;
+					}
+					if($.cookie('username') == "null" || typeof($.cookie('username')) == "undefined"){
+						alert("请登录账号后评论");
+						return false;
+					}
+					
+				});
+				/**
+				 *  主评论输入框的滑入滑出效果
 				 */
 				$("#comment_me").click(function(){
 					$(".comment_input").slideToggle("slow");

@@ -116,8 +116,8 @@
                     	</div>
                     	<br />
                     		<form class="comment_input" action="comment.action" method="post">
-			                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="comments" ></textarea>
-			                    &nbsp;&nbsp;<input type="submit" value="发表评论"/>
+			                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea id="textarea" rows="5" cols="30" name="comments" ></textarea>
+			                    <font id="zishu" color="#7D7D7D"></font>&nbsp;&nbsp;<input id="commm" type="submit" value="发表评论"/>
                     		</form>
                     	
                     	<!--  精彩评论  -->
@@ -147,7 +147,7 @@
 		                    			</c:if>
 		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7D7D7D">${s.time}</font>
 		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#7D7D7D">点赞</font></a> ( <font id="${s.sid}" color="#7D7D7D">${s.praise}</font> )
-		                    		&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;"><font  color="#7D7D7D">回复</font></a>
+		                    		<font id="zishu" color="#7D7D7D"></font>&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;"><font  color="#7D7D7D">回复</font></a>
 		                    		<form action="reply.action" method="post" style="display: none;">
 		                    			<br />
 		                    			<input type="hidden" name="sid" value="${s.sid}"/>
