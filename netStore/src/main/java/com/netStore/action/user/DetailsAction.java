@@ -56,8 +56,8 @@ public class DetailsAction {
 	
 	/**
 	 * 点赞
-	 * @param cid
-	 * @param praise
+	 * @param cid评论的id
+	 * @param praise评论的赞
 	 * @return
 	 */
 	@RequestMapping("/praise")
@@ -65,7 +65,7 @@ public class DetailsAction {
 		
 		long id = Long.valueOf(cid);
 		int pra = Integer.valueOf(praise);
-		Comment comment = CommentService.get_CommentById(cid);
+		Comment comment = CommentService.get_CommentById(id);
 		comment.setPraise(pra);
 		CommentService.save_Comment(comment);
 		
@@ -80,10 +80,18 @@ public class DetailsAction {
 	 * @return返回详情页
 	 */
 	@RequestMapping("/reply")
-	public String reply(String sid, String uid, String reply){
+	public String reply(String sid, String reply, HttpServletRequest request){
+		
+		String username = null;
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie : cookies) {
+			if(cookie.getName().equals("username")){
+				username = cookie.getValue();
+			}
+		}
+		
 		// 把id转为 long类型
 		long ssid = Long.valueOf(sid);
-		long uuid = Long.valueOf(uid);
 		// 新建评论，
 		Comment comment = new Comment();
 		comment.setBook(BookService.get_BookById(bid));
@@ -92,7 +100,7 @@ public class DetailsAction {
 		comment.setTime(new Date());
 		// 评论类型是 回复
 		comment.setType(1);
-		comment.setUsers(UsersService.get_usersById(uuid));
+		comment.setUsers(UsersService.get_usersByName(username));
 		// 把评论放入数据库中
 		CommentService.save_Comment(comment);
 		// 和 父类评论建立关联
@@ -177,8 +185,6 @@ public class DetailsAction {
 		model.addAttribute("bookPromotions2", booksPromotions.get(booksp.get(1)));
 		model.addAttribute("bookPromotions3", booksPromotions.get(booksp.get(2)));	
 		
-		
-		
 		// 把评论送到页面
 		// 查出书籍有关的评论
 		List<Comment> comments = CommentService.get_CommentByBid(bid);
@@ -242,6 +248,24 @@ public class DetailsAction {
 		// 把 时间排序送到网页
 		model.addAttribute("lists_time", lists);
 		
+		// 新建一个数组 按照 赞排列
+		List<Sort_cr> lists_praise = new ArrayList<>();
+		// 循环把前面的集合放入 新建集合中
+		for (Sort_cr sort_cr : lists) {
+			lists_praise.add(sort_cr);
+		}
+		
+		// 根据赞排序
+		Collections.sort(lists_praise, new Comparator<Sort_cr>() {
+
+			@Override
+			public int compare(Sort_cr o1, Sort_cr o2) {
+				return o2.getPraise() - o1.getPraise();
+			}
+		});
+		
+		// 把根据赞排列的 集合送到网页
+		model.addAttribute("lists_praise", lists_praise);
 		
 		return "../../book_store/details";
 	}

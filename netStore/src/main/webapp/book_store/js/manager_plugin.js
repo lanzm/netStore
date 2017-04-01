@@ -16,6 +16,18 @@
 				//把客户端传递过来的参数覆盖掉默认的配置  true为深度迭代
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
+				/**
+				 * 全部评论里面 限制字数
+				 */
+				$(".list2").delegate('textarea', 'keyup',function(){
+					var length = $(this).val().length;
+					
+					if(length > 50){
+						$(this).val($(this).val().substring(0, 50));
+						length = 50;
+					}
+					$(this).parent().find("#zishu").html(50 - length);
+				});
 				
 				/**
 				 * 全部评论的点赞，异步不刷新
@@ -38,11 +50,22 @@
 				});
 				/**
 				 * 全部评论下 点击 回复按钮 的滑入滑出效果
+				 * 以及字数限制
 				 */
 				$(".list2").delegate('#replyall','click',function(){
 					
 					$(this).parent().find("form").slideToggle("slow");
 					return false;
+				});
+				/**
+				 *  全部评论中，回复点击时判断用户是否已经登陆
+				 */
+				$(".list1").delegate('#huifu', 'click', function(){
+					if($.cookie('username') == "null"){
+						alert("请登录账号后评论");
+						return false;
+					}
+					
 				});
 				/**
 				 * 点击全部评论滑入滑出效果
@@ -56,14 +79,14 @@
 				/**
 				 * 精彩评论的点赞，异步不刷新
 				 */
-				$(".list1").delegate('a', 'click',function(){
+				$(".list1").delegate('font', 'click',function(){
 					
 					if($(this).html() == "点赞"){
-						var num = parseInt($(this).next().html());
-						$(this).next().html(num+1);
+						var num = parseInt($(this).parent().next().html());
+						$(this).parent().next().html(num+1);
 						$.post("praise.action",{
-							cid:$(this).next().attr("id"),
-							praise:$(this).next().html()
+							cid:$(this).parent().next().attr("id"),
+							praise:$(this).parent().next().html()
 						},function(){
 							
 						});
@@ -185,18 +208,17 @@
 				/**
 				 * 取出 用户名的 cookie
 				 */
-				if($.cookie('username') != "null"){
+				if($.cookie('username') == "null" || typeof($.cookie('username')) == "undefined"){
+					// 如果为空则还原
+					$("#myaccount").text("我的账号");
+					$("#myaccount").attr("href","myaccount_bf.action");
+				}else{
 					// 如果不为空 ， 把标题置为 用户名
 					$("#myaccount").text($.cookie('username'));
 					// 并且链接改为 购物车
 					$("#myaccount").attr("href","personal.action");
 					// 添加退出按钮
 					$("#myaccount").parent().after("<li><a id='quit' href='javascript:void(0)' onclick='location.reload()'>退出</a></li>");
-					
-				}else{
-					// 如果为空则还原
-					$("#myaccount").text("我的账号");
-					$("#myaccount").attr("href","myaccount_bf.action");
 				}
 				
 				

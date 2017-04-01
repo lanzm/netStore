@@ -87,7 +87,7 @@
             <div id="demo" class="demolayout">
 
                 <ul id="demo-nav" class="demolayout">
-                <li><a id="comment" class="active" href="#tab1">More details</a></li>
+                <li><a id="comment" class="active" href="#tab1">评论</a></li>
             <!--    <li><a class="" href="#tab2">Related books</a></li>  --> 
                 </ul>
     
@@ -129,21 +129,35 @@
                     	</div>
                     	<br />
                     	<ul class="list1">
-                    		<c:forEach items="${comments}" var="c">
-	                    		<li >
-		                    		<a><font color="#7D7D7D"> ${c.users.username}</font></a> ：${c.content}
-		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${c.time}
-		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href="">点赞</a> ( <font id="${c.cid}">${c.praise}</font> )
-		                    		&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;">回复</a>
+                    		<c:forEach items="${lists_praise}" var="s" begin="0" end="4">
+	                    			<li >
+		                    		<c:if test="${s.type == 1}">
+		                    		<a><font color="#7D7D7D"> ${s.users.username}</font></a> ：<font><strong>${s.content}</strong></font> 
+		                    			<br />
+		                    				<ul>
+		                    					<li>
+		                    						<c:forEach items="${s.reply}" var="r">
+		                    							<a>${r.users.username}</a>：<font><strong>${r.content}</strong></font>
+		                    						</c:forEach>
+		                    					</li>
+		                    				</ul>
+		                    			</c:if>
+		                    			<c:if test="${s.type == 0}">
+		                    				<a><font color="#7D7D7D"> ${s.users.username}</font></a> ：<font><strong>${s.content}</strong></font> 
+		                    			</c:if>
+		                    		<br /><br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#7D7D7D">${s.time}</font>
+		                    		&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#7D7D7D">点赞</font></a> ( <font id="${s.sid}" color="#7D7D7D">${s.praise}</font> )
+		                    		&nbsp;&nbsp;<a id="reply" href="" style="text-decoration: none;"><font  color="#7D7D7D">回复</font></a>
 		                    		<form action="reply.action" method="post" style="display: none;">
 		                    			<br />
-		                    			<input type="hidden" name="cid" value="${c.cid}"/>
-		                    			<input type="hidden" name="uid" value="${c.users.uid}"/>
-					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${c.users.username}"></textarea>
-					                    &nbsp;&nbsp;<input id="comment_sub" type="submit" value="回复"/>
+		                    			<input type="hidden" name="sid" value="${s.sid}"/>
+		                    			<input type="hidden" name="uid" value="${s.users.uid}"/>
+					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${s.users.username}"></textarea>
+					                    <font id="zishu" color="#7D7D7D"></font>&nbsp;&nbsp;<input id="comment_sub" type="submit" value="回复"/>
 		                    		</form>
 		                    		<br />
 		                    		<div class="box_bottom"></div>
+		                    		<br />
 	                    		</li>
                     		</c:forEach>
                     	</ul>
@@ -180,9 +194,8 @@
 		                    		<form action="reply.action" method="post" style="display: none;">
 		                    			<br />
 		                    			<input type="hidden" name="sid" value="${s.sid}"/>
-		                    			<input type="hidden" name="uid" value="${s.users.uid}"/>
 					                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="5" cols="30" name="reply" placeholder="@ ${s.users.username}"></textarea>
-					                    &nbsp;&nbsp;<input type="submit" value="回复"/>
+					                    <font id="zishu" color="#7D7D7D"></font>&nbsp;&nbsp;<input id="huifu" type="submit" value="回复"/>
 		                    		</form>
 		                    		<br />
 		                    		<div class="box_bottom"></div>
@@ -340,22 +353,6 @@
                 	</c:forEach>
                 </ul>
              
-             <!--  
-             <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" title="" /></span>Partners</div> 
-                
-                <ul class="list">
-                <li><a href="#">accesories</a></li>
-                <li><a href="#">books gifts</a></li>
-                <li><a href="#">specials</a></li>
-                <li><a href="#">hollidays gifts</a></li>
-                <li><a href="#">accesories</a></li>
-                <li><a href="#">books gifts</a></li>
-                <li><a href="#">specials</a></li>
-                <li><a href="#">hollidays gifts</a></li>
-                <li><a href="#">accesories</a></li>                              
-                </ul>      
-             
-              -->  
              </div>         
         
         </div><!--end of right content-->
