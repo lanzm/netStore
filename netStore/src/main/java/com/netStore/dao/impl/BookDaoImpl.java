@@ -59,6 +59,19 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao<Book>{
 		List<Book> books = (List<Book>) this.getHibernateTemplate().find(" from Book where cid = " + cid + " ");
 		return books;
 	}
+
+	@Override
+	public Book get_bookByName(String bookname) {
+		
+		List<Book> lists = (List<Book>) this.getHibernateTemplate().find(" from Book where bookname = '" + bookname + "' ");
+		
+		if(lists.size() == 0){
+			return null;
+		}else{
+			return lists.get(0);
+		}
+		
+	}
 	
 	
 

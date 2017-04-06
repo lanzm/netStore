@@ -86,6 +86,12 @@ public class BookServiceImpl implements BookService{
 		return bookDao.get_bookByClassify(cid);
 	}
 
+	@Override
+	public Book get_BookByName(String bookname) {
+		
+		return (Book) bookDao.get_bookByName(bookname);
+	}
+
 	
 
 

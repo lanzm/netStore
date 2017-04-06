@@ -38,5 +38,12 @@ public interface BookService {
 	 * @return 书籍集合
 	 */
 	List<Book> get_BookByClassify(long cid);
+	
+	/**
+	 * 通过书籍名称查询得到书籍
+	 * @param bookname书籍名称
+	 * @return返回书籍
+	 */
+	Book get_BookByName(String bookname);
 
 }

@@ -3,11 +3,12 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的网上书城</title>
+<title>添加图书集</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
@@ -18,15 +19,17 @@
 <div id="wrap">
 
        <div class="header">
-       		<div class="logo"><a href="welcome.action"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
+       		<div class="logo"><a href="index.html"><img src="book_store/images/logo.gif" alt="" title="" border="0" /></a></div>            
         <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
+          <!--    <li><a href="about.html">关于我们</a></li> -->
             <li><a href="category.action">书城</a></li>
             <li><a href="specials.action">特价书</a></li>
             <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
-          	<li><a href="theme.action">图书集</a></li>
+          <!-- <li><a href="details.html">prices</a></li>   -->
+          		<li><a href="theme.action">图书集</a> </li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
@@ -37,99 +40,71 @@
        
        <div class="center_content">
        	<div class="left_content">
-        	
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>精选书籍</div>
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>注册</div>
         
-        	<div class="feat_prod_box">
+        	<div class="feat_prod_box_details">
+            <p class="details">
+            	添加你自己的图书集，一起创造读书欢乐气氛！
+             </p>
             
-            	<div class="prod_img"><a href="details/${book1.bid}.action"><img src="/image/${book1.filename}" alt="" title="" border="0" /></a></div>
-                
-                <div class="prod_det_box">
-                	<div class="box_top"></div>
-                    <div class="box_center">
-                    <div class="prod_title">书籍简介</div>
-                    <p class="details">${book1.description}</p>
-                    <a href="details/${book1.bid}.action" class="more">- 详情 -</a>
-                    <div class="clear"></div>
+              	<div class="contact_form">
+                <div class="form_subtitle">添加图书集</div>
+                 <form name="addtheme" action="addtheme_af.action" method="post">          
+                    <div id="lastt" class="form_row">
+	                    <label class="contact"><strong>* 主题:</strong></label><font id="tcontent"></font>
+	                    <input id="tcontent" name="tcontent" type="text" class="contact_input" placeholder="请输入主题"/>
+                    </div>  
+					<div class="form_row">第1本书</div>
+                    <div class="form_row">
+	                    <label class="contact"><strong>* 书籍选择:</strong></label><font id="passwordmsg"></font>
+	                   	<input list="bookname" id="chose" name="bookname" class="contact_input" placeholder="请输入书籍名称"/>
+	                   	<datalist id="bookname">
+		                   	<c:forEach items="${books}" var="b">
+		                   		<option id="${b.bid}">${b.bookname}</option>
+		                   	</c:forEach>
+	                   	</datalist>
+                    </div> 
+              
+
+                    <div  class="form_row">
+	                    <label class="contact"><strong>* 书籍推荐理由:</strong></label><font id="phonemsg"></font>
+	                    <input id="thcontent" name="thcontent" type="text" class="contact_input" placeholder="请输入书籍推荐理由"/>
                     </div>
-                    
-                    <div class="box_bottom"></div>
-                </div>    
-            <div class="clear"></div>
-            </div>	
+                    <!--
+                    <div class="form_row">
+                        <div class="terms">
+                        <input id="agree" type="checkbox" name="terms" />
+                    		    我同意	 <a href="#">本网站协议</a>  </div>
+                    </div> 
+                      -->
+                    <div class="form_row">
+                    	<input type="submit" class="register" value="提交" />
+                    	<input id="addboo" type="button" class="register" value="再来一本"/>
+                    </div>   
+                  </form>     
+                </div>  
             
-            
-        	<div class="feat_prod_box">
-            
-            	<div class="prod_img"><a href="details/${book2.bid}.action"><img src="/image/${book2.filename}" alt="" title="" border="0" /></a></div>
-                
-                <div class="prod_det_box">
-                	<div class="box_top"></div>
-                    <div class="box_center">
-                    <div class="prod_title">书籍简介</div>
-                    <p class="details">${book2.description}</p>
-                    <a href="details/${book2.bid}.action" class="more">- 详情 -</a>
-                    <div class="clear"></div>
-                    </div>
-                    
-                    <div class="box_bottom"></div>
-                </div>    
-            <div class="clear"></div>
-            </div>      
-            
-            
-            
-           <div class="title"><span class="title_icon"><img src="book_store/images/bullet2.gif" alt="" title="" /></span>新增书籍</div> 
-           
-           <div class="new_products">
-           
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook1.bid}.action" title="${newbook1.bookname}">${newbook1.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook1.bid}.action"><img src="/image/${newbook1.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>
-                    
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook2.bid}.action" title="${newbook2.bookname}">${newbook2.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook2.bid}.action"><img src="/image/${newbook2.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>                    
-                    
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook3.bid}.action" title="${newbook3.bookname}">${newbook3.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook3.bid}.action"><img src="/image/${newbook3.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>          
-            	 
-            </div> 
-          
-            
+          </div>	
         <div class="clear"></div>
         </div><!--end of left content-->
         
         <div class="right_content">
         <!-- 
-        	<div class="languages_box">
+                	<div class="languages_box">
             <span class="red">Languages:</span>
-            <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/de.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/fr.gif" alt="" title="" border="0" /></a>
+            <a href="#"><img src="images/de.gif" alt="" title="" border="0" /></a>
             </div>
                 <div class="currency">
-                <span class="red">货币: </span>
+                <span class="red">Currency: </span>
                 <a href="#">GBP</a>
                 <a href="#">EUR</a>
-                <a href="#" class="selected">USD</a>
+                <a href="#"><strong>USD</strong></a>
                 </div>
-               -->  
+            -->     
                 
-              <div class="cart">
+             <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>
                   <div class="home_cart_content">
                    <font id="num"></font> x 商品 | <span class="red">总金额: <font id="money"></font>￥</span>
@@ -233,6 +208,5 @@
     
 
 </div>
-
 </body>
 </html>

@@ -41,6 +41,12 @@
 			</key>
 			<one-to-many class="com.netStore.pojo.Orders"/>
 		</set>
+		<set name="theme" lazy="false">
+			<key>
+			  <column name="uid"></column>
+			</key>
+			<one-to-many class="com.netStore.pojo.Theme"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

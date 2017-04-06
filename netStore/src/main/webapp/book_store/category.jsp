@@ -22,12 +22,11 @@
         <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
-          <!--    <li><a href="about.html">关于我们</a></li> -->
             <li><a href="category.action">书城</a></li>
             <li><a href="specials.action">特价书</a></li>
              <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
-          <!-- <li><a href="details.html">prices</a></li>   -->
+         	 <li><a href="theme_bf.action">图书集</a></li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     

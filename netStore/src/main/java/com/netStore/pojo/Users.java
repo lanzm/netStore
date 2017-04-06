@@ -13,10 +13,18 @@ public class Users implements Serializable{
 	private String company;
 	private String address;
 	// one2many
-	private Set<Orders> orders;
+	private Set<Orders> orders; // 用户订单
 	// one2many
-	private Set<Comment> comment;
-
+	private Set<Comment> comment; // 书籍详情的评论
+	// one2many
+	private Set<Theme> theme; // 用户发表的主题
+	
+	public Set<Theme> getTheme() {
+		return theme;
+	}
+	public void setTheme(Set<Theme> theme) {
+		this.theme = theme;
+	}
 	public long getUid() {
 		return uid;
 	}

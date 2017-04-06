@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的网上书城</title>
+<title>图书集</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
@@ -22,11 +22,12 @@
         <div id="menu">
             <ul>                                                                       
             <li class="selected"><a href="welcome.action">首页</a></li>
+          <!--    <li><a href="about.html">关于我们</a></li> -->
             <li><a href="category.action">书城</a></li>
             <li><a href="specials.action">特价书</a></li>
             <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
-          	<li><a href="theme.action">图书集</a></li>
+         	<li><a href="theme.action">图书集</a> </li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
@@ -36,49 +37,41 @@
        
        
        <div class="center_content">
-       	<div class="left_content">
-        	
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>精选书籍</div>
+       	<div id="theme1" class="left_content">
         
-        	<div class="feat_prod_box">
+        	
+            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span><a href="addtheme.action">添加图书集</a>推荐图书集</div>
+			
+	        	<c:forEach items="${themes}" var="t">
+	        	<div class="feat_prod_box">
+	        		<a>${t.users.username}</a> : <a href="#" style="text-decoration: none;"><font color="black" size="3"><strong>${t.tcontent}</strong></font></a>
+	        		<a><font color="red">喜欢</font></a> <font color="red">(${t.loved})</font>
+	        		</div>
+	        		<div style="display: none;">
+	        			<c:forEach items="${t.themeitem}" var="tt">
+		        		 	<div class="feat_prod_box">
+				            	<div class="prod_img"><a href="details/${tt.book.bid}.action"><img src="/image/${tt.book.filename}" alt="" title="" border="0" /></a></div>
+				                
+				                <div class="prod_det_box">
+				                	<div class="box_top"></div>
+				                    <div class="box_center">
+				                    <div class="prod_title">推荐理由</div>
+				                    <p class="details">${tt.thcontent}</p>
+				                    <a href="details/${tt.book.bid}.action" class="more">- 详情 -</a>
+				                    <div class="clear"></div>
+				                    </div>
+				                    
+				                    <div class="box_bottom"></div>
+				                </div>    
+				            <div class="clear"></div>
+				            </div>	
+	        			</c:forEach>
+	        		</div>
+	        		
+	        	</c:forEach>
+	     
             
-            	<div class="prod_img"><a href="details/${book1.bid}.action"><img src="/image/${book1.filename}" alt="" title="" border="0" /></a></div>
-                
-                <div class="prod_det_box">
-                	<div class="box_top"></div>
-                    <div class="box_center">
-                    <div class="prod_title">书籍简介</div>
-                    <p class="details">${book1.description}</p>
-                    <a href="details/${book1.bid}.action" class="more">- 详情 -</a>
-                    <div class="clear"></div>
-                    </div>
-                    
-                    <div class="box_bottom"></div>
-                </div>    
-            <div class="clear"></div>
-            </div>	
-            
-            
-        	<div class="feat_prod_box">
-            
-            	<div class="prod_img"><a href="details/${book2.bid}.action"><img src="/image/${book2.filename}" alt="" title="" border="0" /></a></div>
-                
-                <div class="prod_det_box">
-                	<div class="box_top"></div>
-                    <div class="box_center">
-                    <div class="prod_title">书籍简介</div>
-                    <p class="details">${book2.description}</p>
-                    <a href="details/${book2.bid}.action" class="more">- 详情 -</a>
-                    <div class="clear"></div>
-                    </div>
-                    
-                    <div class="box_bottom"></div>
-                </div>    
-            <div class="clear"></div>
-            </div>      
-            
-            
-            
+          <!--  
            <div class="title"><span class="title_icon"><img src="book_store/images/bullet2.gif" alt="" title="" /></span>新增书籍</div> 
            
            <div class="new_products">
@@ -108,7 +101,7 @@
                     </div>          
             	 
             </div> 
-          
+          -->
             
         <div class="clear"></div>
         </div><!--end of left content-->

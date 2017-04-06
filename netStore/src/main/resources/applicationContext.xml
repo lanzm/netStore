@@ -15,8 +15,13 @@
    	<import resource="applicationContext-manager.xml"/>
   	<import resource="applicationContext-classify.xml"/>
   	<import resource="applicationContext-book.xml"/>
+  	<!-- 订单 -->
   	<import resource="applicationContext-order.xml"/>
   	<import resource="applicationContext-orderitem.xml"/>
+  	<!-- 评论 -->
   	<import resource="applicationContext-comment.xml"/>
   	<import resource="applicationContext-parent_Children.xml"/>
+  	<!-- 图书集  -->
+  	<import resource="applicationContext-theme.xml"/>
+  	<import resource="applicationContext-themeitem.xml"/>
 </beans>

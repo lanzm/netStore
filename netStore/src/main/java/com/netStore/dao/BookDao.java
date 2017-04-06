@@ -35,5 +35,12 @@ public interface BookDao<T> extends BaseDao<T>{
 	 * @return
 	 */
 	public List<T> get_bookByClassify(long cid);
+	
+	/**
+	 * 通过书籍名称查询
+	 * @param bookname书籍名称
+	 * @return返回书籍
+	 */
+	public T get_bookByName(String bookname);
 
 }

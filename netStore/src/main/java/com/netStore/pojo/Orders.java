@@ -1,7 +1,6 @@
 package com.netStore.pojo;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
 
 public class Orders implements Serializable{

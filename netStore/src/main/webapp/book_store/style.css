@@ -405,6 +405,15 @@ color:#999999;
 border:1px #DFDFDF solid;
 float:left;
 }
+select.contact_input{
+width:253px;
+height:18px;
+background-color:#fff;
+color:#999999;
+border:1px #DFDFDF solid;
+float:left;
+
+}
 textarea.contact_textarea{
 width:253px;
 height:120px;

@@ -16,6 +16,43 @@
 				//把客户端传递过来的参数覆盖掉默认的配置  true为深度迭代
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
+				
+				var i = 1;
+				$("#addboo").click(function(){
+					// 自增变量
+					i ++;
+					// 获取下拉列表中的书籍信息，保存到 bookk变量中
+					var bookk = $(this).parent().parent().find("datalist").html();
+					// 拼接 增加书籍
+					var new1 = "<div class=\"form_row\">"
+						+"第"+ i +"本书"
+						+"</div>"
+						+"<div class=\"form_row\">"
+						+"<label class=\"contact\"><strong>* 书籍选择:</strong></label><font id=\"passwordmsg\"></font>"
+	                   	+"<input list=\"bookname\" id=\"chose\" name=\"bookname\" class=\"contact_input\" placeholder=\"请输入书籍名称\"/>"
+	                   	+"<datalist id=\"bookname\">"
+	                   + bookk
+	                   	+"</datalist>"
+	                   +" </div>" 
+	                   +" <div class=\"form_row\">"
+	                  +"  <label class=\"contact\"><strong>* 书籍推荐理由:</strong></label><font id=\"phonemsg\"></font>"
+	                  +"  <input id=\"thcontent\" name=\"thcontent\" type=\"text\" class=\"contact_input\" placeholder=\"请输入书籍推荐理由\"/>"
+	                  +" </div>"
+                   // 拼接结束，把拼接的内容接到表格后面
+					$("#lastt").after(new1);
+					// 变量赋值
+					i = i;
+				});
+			
+				/**
+				 * 主题 点击文字滑入滑出书籍效果
+				 */
+				$("#theme1").delegate('strong','click',function(){
+					
+					$(this).parent().parent().parent().next().slideToggle("slow");
+					
+				});
+				
 				/**
 				 * 全部评论里面 限制字数
 				 */
