@@ -1,9 +1,6 @@
 package com.netStore.action.user;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +22,14 @@ public class CategoryAction {
 	//自动注入 
 	@Autowired
 	public ClassifyService ClassifyService;
-	
-	
+	// 分页按钮的值，默认为第一页
 	int msg = 1;
 	
+	/**
+	 * 书城页面所需要的必要数据
+	 * @param model
+	 * @return返回书城网页
+	 */
 	@RequestMapping("/category")
 	public String category(Model model){
 		// 用户页面

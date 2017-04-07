@@ -42,6 +42,33 @@ public class ThemeAction {
 	public ThemeItemService ThemeItemService;
 	
 	
+	/**
+	 * 点击喜欢 按钮
+	 * @param tid主题id
+	 * @param loved喜欢数量
+	 * @return
+	 */
+	@RequestMapping("/themeloved")
+	public String themeloved(String tid, String loved){
+		
+		long id = Long.parseLong(tid);
+		int lov = Integer.parseInt(loved);
+		Theme theme = ThemeService.get_ThemeById(id);
+		theme.setLoved(lov);
+		ThemeService.save_Theme(theme);
+		
+		return "redirect:/theme.action";
+	}
+	
+	
+	/**
+	 * 添加一个主题
+	 * @param tcontent主题
+	 * @param bookname添加书籍的名称
+	 * @param thcontent书籍推荐理由
+	 * @param request获取cookie得到用户
+	 * @return返回图书集页面
+	 */
 	@RequestMapping("/addtheme_af")
 	public String addtheme_af(String tcontent, String[] bookname, String[] thcontent, HttpServletRequest request){
 		// 新建 主题
@@ -98,9 +125,9 @@ public class ThemeAction {
 	
 	
 	/**
-	 * 
+	 * 点击添加一个主题超链接
 	 * @param model
-	 * @return
+	 * @return返回添加主题页面
 	 */
 	@RequestMapping("/addtheme")
 	public String addtheme(Model model){
@@ -125,9 +152,9 @@ public class ThemeAction {
 	}
 	
 	/**
-	 * 
+	 * 跳转到图书集页面之前送到网页的数据
 	 * @param model
-	 * @return
+	 * @return返回图书集网页
 	 */
 	@RequestMapping("/theme")
 	public String theme(Model model){

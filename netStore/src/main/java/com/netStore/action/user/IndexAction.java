@@ -1,20 +1,7 @@
 package com.netStore.action.user;
 
-import java.net.HttpCookie;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpSession;
-
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,7 +40,12 @@ public class IndexAction {
 //		 System.out.println(wellchosenBooks.get(0).getBookname());
 //	}
 	
-	
+	/**
+	 * 欢迎界面，
+	 * @param model
+	 * @return返回第一页
+	 * @throws Exception
+	 */
 	@RequestMapping("/welcome")
 	public String wellchosen(Model model) throws Exception {
 		// 查出所有书籍

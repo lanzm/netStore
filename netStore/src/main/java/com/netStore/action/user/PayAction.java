@@ -36,7 +36,7 @@ public class PayAction {
 	 * 确认支付，跳转到银联支付页面
 	 * @param req
 	 * @param resp
-	 * @return
+	 * @return返回支付页面，用@ResponseBody标签来处理html页面
 	 * @throws IOException
 	 */
 	@RequestMapping("/pay_sure")

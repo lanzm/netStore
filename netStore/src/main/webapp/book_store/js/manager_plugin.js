@@ -17,6 +17,60 @@
 				$.extend(true,$.fn.GridPanel.defaultConfig,config);
 				
 				
+			
+				
+				/**
+				 * 在 图书集页面中 点击喜欢事件
+				 */
+				$("#loved").delegate('a','click',function(){
+					// 全局变量
+					var num = 0;
+					var num1 = 0;
+					// 如果点击的是喜欢a标签
+					if($(this).text() == "喜欢"){
+						// 把变化之前的值辅到 num上
+						num = $(this).next().text();
+						// 如果 点击时， 喜欢的颜色是黑色的
+						if($(this).children().attr("color") == "black"){
+							// 则 数量加一
+								$(this).next().text(parseInt(num) + 1);
+								// 并且加到 另一个变量中
+								num1 = parseInt(num) + 1;
+								// 把喜欢i的颜色置为红色
+								$(this).children().attr("color","red");
+						}
+						// 如果点击时 喜欢的颜色已经是红色
+						else if($(this).children().attr("color") == "red"){
+							// 如果 取到的num值是0
+							if(num == 0){
+								// 则为0 ，否则会变成负数
+								$(this).next().text(0);
+								num1 = 0;
+								// 把颜色置为 黑色
+								$(this).children().attr("color","black");
+							// 如果 不为0的情况
+							}else{
+								// 则数量减一
+								$(this).next().text(parseInt(num) - 1);
+								num1 = parseInt(num) - 1;
+								// 置为黑色
+								$(this).children().attr("color","black");
+							}
+						}
+					}
+					// 把最后的值异步送到 后台存储
+					$.post("themeloved.action", {
+						loved:num1,
+						tid:$(this).next().next().attr("value")
+					}, function(){
+					
+					});
+					
+				});
+				
+				/**
+				 * 图书集页面中 添加一本推荐书籍
+				 */
 				var i = 1;
 				$("#addboo").click(function(){
 					// 自增变量

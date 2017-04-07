@@ -27,7 +27,7 @@
             <li><a href="specials.action">特价书</a></li>
              <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register.action">注册</a></li>
-          <!-- <li><a href="details.html">prices</a></li>   -->
+          <li><a href="theme.action">图书集</a></li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     

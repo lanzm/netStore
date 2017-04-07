@@ -39,13 +39,16 @@
        <div class="center_content">
        	<div id="theme1" class="left_content">
         
+        	<div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span>图书集</div>
         	
-            <div class="title"><span class="title_icon"><img src="book_store/images/bullet1.gif" alt="" title="" /></span><a href="addtheme.action">添加图书集</a>推荐图书集</div>
-			
+            <div  class="feat_prod_box"><span class="title_icon"></span><a href="addtheme.action" style="text-decoration: none;"><font color="#7D7D7D" size="2">添加一个图书集</font></a>
+            		&nbsp;&nbsp;&nbsp;&nbsp;<input align="right"/>&nbsp;&nbsp;<input align="right" type="button" value="搜索"/>
+            </div>
+			<div id="loved">
 	        	<c:forEach items="${themes}" var="t">
 	        	<div class="feat_prod_box">
 	        		<a>${t.users.username}</a> : <a href="#" style="text-decoration: none;"><font color="black" size="3"><strong>${t.tcontent}</strong></font></a>
-	        		<a><font color="red">喜欢</font></a> <font color="red">(${t.loved})</font>
+	        		<a href = "#" style="text-decoration: none;"><font color="black">喜欢</font></a> (<font color="#7D7D7D">${t.loved}</font>)<input type="hidden" value="${t.tid}"/>
 	        		</div>
 	        		<div style="display: none;">
 	        			<c:forEach items="${t.themeitem}" var="tt">
@@ -69,58 +72,14 @@
 	        		</div>
 	        		
 	        	</c:forEach>
-	     
+			</div>
             
-          <!--  
-           <div class="title"><span class="title_icon"><img src="book_store/images/bullet2.gif" alt="" title="" /></span>新增书籍</div> 
-           
-           <div class="new_products">
-           
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook1.bid}.action" title="${newbook1.bookname}">${newbook1.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook1.bid}.action"><img src="/image/${newbook1.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>
-                    
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook2.bid}.action" title="${newbook2.bookname}">${newbook2.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook2.bid}.action"><img src="/image/${newbook2.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>                    
-                    
-                    <div class="new_prod_box">
-                        <a class="li" href="details/${newbook3.bid}.action" title="${newbook3.bookname}">${newbook3.bookname}</a>
-                        <div class="new_prod_bg">
-                        <span class="new_icon"><img src="book_store/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details/${newbook3.bid}.action"><img src="/image/${newbook3.filename}" alt="" title="" class="thumb" border="0" /></a>
-                        </div>           
-                    </div>          
-            	 
-            </div> 
-          -->
             
         <div class="clear"></div>
         </div><!--end of left content-->
         
         <div class="right_content">
-        <!-- 
-        	<div class="languages_box">
-            <span class="red">Languages:</span>
-            <a href="#" class="selected"><img src="book_store/images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="book_store/images/de.gif" alt="" title="" border="0" /></a>
-            </div>
-                <div class="currency">
-                <span class="red">货币: </span>
-                <a href="#">GBP</a>
-                <a href="#">EUR</a>
-                <a href="#" class="selected">USD</a>
-                </div>
-               -->  
+
                 
               <div class="cart">
                   <div class="title"><span class="title_icon"><img src="book_store/images/cart.gif" alt="" title="" /></span>购物车</div>

@@ -9,10 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>书城</title>
 <link rel="stylesheet" type="text/css" href="book_store/style.css" />
+
 <script type="text/javascript" src="book_store/js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="book_store/js/jquery-cookie.js"></script>
 <script type="text/javascript" src="book_store/js/manager_plugin.js"></script>
 <script type="text/javascript" src="book_store/js/manager.js"></script> 
+
+<script type="text/javascript" src="book_store/js/lazyload.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -26,7 +29,7 @@
             <li><a href="specials.action">特价书</a></li>
              <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
-         	 <li><a href="theme_bf.action">图书集</a></li>
+         	 <li><a href="theme.action">图书集</a></li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
@@ -54,7 +57,7 @@
 		                        <c:if test="${b.promotions == true}"><!-- 判断是否促销 -->
 		                        	 <span class="new_icon"><img src="book_store/images/promo_icon.gif" alt="" title="" /></span>
 		                        </c:if>
-		                        <a href="details/${b.bid}.action"><img src="/image/${b.filename}" alt="" title="" class="thumb" border="0" /></a>
+		                        <a href="details/${b.bid}.action"><img id="lazyimage" src="book_store/images/loading.gif" alt="" title="" class="thumb" border="0" data-echo = "/image/${b.filename}"/></a>
 	                        </div>           
 	                    </div>
            			</c:forEach>
@@ -180,7 +183,7 @@
        
               
        <div class="footer">
-       	<div class="left_footer"><img src="book_store/images/footer_logo.gif" alt="" title="" /><br /></div>
+       	<div class="left_footer"><img id="aaaaa" src="" alt="" title="" data-echo = "book_store/images/footer_logo.gif"/><br /></div>
         <div class="right_footer">
         <a href="welcome.action">首页</a>
         <a href="#">关于我们</a>
@@ -195,7 +198,12 @@
     
 
 </div>
-
+<script>
+	Echo.init({
+	    offset: 0,//离可视区域多少像素的图片可以被加载
+	　　 throttle: 500 //图片延时多少毫秒加载
+	}); 
+</script>
 
 </body>
 </html>

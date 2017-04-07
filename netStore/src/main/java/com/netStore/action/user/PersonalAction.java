@@ -41,7 +41,11 @@ public class PersonalAction {
 	String username = null;
 	String oid = null;
 	
-	
+	/**
+	 * 删除订单操作
+	 * @param oid要删除的id值
+	 * @return返回个人中心页面
+	 */
 	@RequestMapping("/personal_del/{oid}")
 	public String personal_del(@PathVariable String oid){
 		
@@ -180,7 +184,9 @@ public class PersonalAction {
 			return "redirect:/myaccount_bf.action";
 		}
 		// 如果没有用户名,则跳转到登陆页面
-		if(username == null){
+		if(username.equals(null)){
+			return "redirect:/myaccount_bf.action";
+		}else if(username.equals("null")){
 			return "redirect:/myaccount_bf.action";
 		}
 		// 如果报文返回成功，则更新状态，为已付款

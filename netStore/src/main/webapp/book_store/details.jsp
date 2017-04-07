@@ -36,7 +36,7 @@
             <li><a href="specials.action">特价书</a></li>
             <li><a id="myaccount" href="myaccount_bf.action"></a></li>
             <li><a id="register" href="register_bf.action">注册</a></li>
-          <!-- <li><a href="details.html">prices</a></li>   -->
+         	 <li><a href="theme.action">图书集</a> </li>
             <li><a href="contact_bf.action">联系我们</a></li>
             </ul>
         </div>     
@@ -137,7 +137,7 @@
 		                    				<ul>
 		                    					<li>
 		                    						<c:forEach items="${s.reply}" var="r">
-		                    							<a>${r.users.username}</a>：<font><strong>${r.content}</strong></font>
+		                    							<a>${r.users.username}</a>：<font color="#7D7D7D"><strong>${r.content}</strong></font>
 		                    						</c:forEach>
 		                    					</li>
 		                    				</ul>
@@ -180,7 +180,7 @@
 		                    				<ul>
 		                    					<li>
 		                    						<c:forEach items="${s.reply}" var="r">
-		                    							<a>${r.users.username}</a>：<font><strong>${r.content}</strong></font>
+		                    							<a>${r.users.username}</a>：<font color="#7D7D7D"><strong>${r.content}</strong></font>
 		                    						</c:forEach>
 		                    					</li>
 		                    				</ul>

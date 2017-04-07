@@ -51,7 +51,7 @@
                 <div class="form_subtitle">添加图书集</div>
                  <form name="addtheme" action="addtheme_af.action" method="post">          
                     <div id="lastt" class="form_row">
-	                    <label class="contact"><strong>* 主题:</strong></label><font id="tcontent"></font>
+	                    <label class="contact"><strong>* 主题:</strong></label><font id="tcontent"></font><font id="tcontentmsg"></font>
 	                    <input id="tcontent" name="tcontent" type="text" class="contact_input" placeholder="请输入主题"/>
                     </div>  
 					<div class="form_row">第1本书</div>

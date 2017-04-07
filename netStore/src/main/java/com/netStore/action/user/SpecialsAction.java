@@ -25,10 +25,14 @@ public class SpecialsAction {
 	//自动注入 
 	@Autowired
 	public ClassifyService ClassifyService;
-	
-	
+	// 分页页码，默认第一页
 	int msg = 1;
 	
+	/**
+	 * 促销书籍初始页面
+	 * @param model
+	 * @return返回促销书籍页面
+	 */
 	@RequestMapping("/specials")
 	public String specials(Model model){
 		
